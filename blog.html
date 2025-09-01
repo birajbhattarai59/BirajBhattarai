@@ -44,6 +44,59 @@
 
 <h2>Blog</h2>
 <p>Latest articles and updates will appear here.</p>
+  <section id="blog">
+  <h2>Latest Blog Posts</h2>
+  <div id="blogger-posts" class="blog-grid"></div>
+</section>
+
+<script>
+  function showPosts(data) {
+    const posts = data.feed.entry || [];
+    let html = "";
+
+    posts.slice(0, 6).forEach(entry => {
+      const title = entry.title.$t;
+      const link = entry.link.find(l => l.rel === "alternate").href;
+      const published = new Date(entry.published.$t).toLocaleDateString();
+
+      html += `
+        <article class="blog-card">
+          <a href="${link}" target="_blank">
+            <h3>${title}</h3>
+          </a>
+          <p class="date">${published}</p>
+        </article>
+      `;
+    });
+
+    document.getElementById("blogger-posts").innerHTML = html;
+  }
+</script>
+
+<!-- This fetches your feed and calls showPosts() -->
+<script src="https://contactbirajbhattarai.blogspot.com/feeds/posts/default?alt=json-in-script&callback=showPosts"></script>
+
+<style>
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.blog-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+.blog-card h3 {
+  margin: 10px 0 5px;
+}
+.blog-card .date {
+  font-size: 0.9em;
+  color: #666;
+}
+</style>
 
 </div>
 <footer>
