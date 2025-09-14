@@ -29,39 +29,21 @@
 <body>
 <header>
  <h2>Blog</h2>
-<p>Latest articles and updates will appear here.</p>
-  <section id="blog">
-  <h2>Latest Blog Posts</h2>
-  <div id="blogger-posts" class="blog-grid"></div>
-</section>
-
+<section id="blog"></section>
 <script>
-  function showPosts(data) {
-    const posts = data.feed.entry || [];
-    let html = "";
-
-    posts.slice(0, 6).forEach(entry => {
-      const title = entry.title.$t;
-      const link = entry.link.find(l => l.rel === "alternate").href;
-      const published = new Date(entry.published.$t).toLocaleDateString();
-
-      html += `
-        <article class="blog-card">
-          <a href="${link}" target="_blank">
-            <h3>${title}</h3>
-          </a>
-          <p class="date">${published}</p>
-        </article>
-      `;
-    });
-
-    document.getElementById("blogger-posts").innerHTML = html;
-  }
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https://blog.biraj-bhattarai.com.np/feeds/posts/default?alt=rss')
+.then(res => res.json())
+.then(data => {
+  let html = '';
+  data.items.slice(0,5).forEach(post => {
+    html += `<div class="post">
+      <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
+      <p>${post.description}</p>
+    </div>`;
+  });
+  document.getElementById('blog').innerHTML = html;
+});
 </script>
-
-<!-- This fetches your feed and calls showPosts() -->
-<script src="https://www.blog.biraj-bhattarai.com.np"></script>
-
 <style>
 .blog-grid {
   display: grid;
