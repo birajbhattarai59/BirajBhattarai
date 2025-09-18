@@ -248,6 +248,54 @@
   <footer>
     <div class="footer-links">
       <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Blog</a>
+      <!-- Latest Blog Posts Section -->
+<section id="latest-blog" style="padding: 40px 20px; background-color: #1e1e1e; color: #fff; font-family: Arial, sans-serif;">
+  <h2 style="text-align: center; margin-bottom: 30px;">Latest Posts</h2>
+  <ul id="blog-post-list" style="list-style: none; padding: 0; max-width: 800px; margin: 0 auto;"></ul>
+</section>
+
+<script>
+function displayPosts(json) {
+    const posts = json.feed.entry.slice(0, 5); // show 5 posts
+    const list = document.getElementById('blog-post-list');
+
+    posts.forEach(post => {
+        const title = post.title.$t;
+        const link = post.link.find(l => l.rel === 'alternate').href;
+
+        const li = document.createElement('li');
+        li.style.background = '#2a2a2a';
+        li.style.marginBottom = '15px';
+        li.style.padding = '15px 20px';
+        li.style.borderRadius = '10px';
+        li.style.transition = 'transform 0.3s, background 0.3s';
+        li.innerHTML = `<a href="${link}" target="_blank" style="color: #fff; text-decoration: none; font-weight: bold;">${title}</a>`;
+
+        li.onmouseover = () => {
+            li.style.background = '#3a3a3a';
+            li.style.transform = 'scale(1.02)';
+        };
+        li.onmouseleave = () => {
+            li.style.background = '#2a2a2a';
+            li.style.transform = 'scale(1)';
+        };
+
+        list.appendChild(li);
+    });
+}
+
+// Create a script tag for JSONP request
+const script = document.createElement('script');
+script.src = 'https://blog.biraj-bhattarai.com.np/feeds/posts/default?alt=json-in-script&callback=displayPosts';
+document.body.appendChild(script);
+</script>
+
+<style>
+  @media (max-width: 600px) {
+    #latest-blog h2 { font-size: 24px; }
+    #blog-post-list li { font-size: 16px; padding: 12px 15px; }
+  }
+</style>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms</a>
     </div>
