@@ -295,51 +295,130 @@ Bhattarai's musical journey is marked by his commitment to continuous learning a
 </style>
 
 <section id="gallery">
-  <h2>Gallery</h2>
-  <div class="photo-slider">
-    <a href="#img1"><img src="img1.jpg" alt="Gallery 1"></a>
-    <a href="#img2"><img src="img2.jpg" alt="Gallery 2"></a>
-    <a href="#img3"><img src="img3.jpg" alt="Gallery 3"></a>
-    <a href="#img4"><img src="img4.jpg" alt="Gallery 4"></a>
-    <a href="#img5"><img src="img5.jpg" alt="Gallery 5"></a>
+  <!-- Image Slider -->
+<div class="slider">
+  <div class="slides">
+    <img src="img1.jpg" alt="Image 1" class="active">
+    <img src="img2.jpg" alt="Image 2">
+    <img src="img3.jpg" alt="Image 3">
+    <img src="img4.jpg" alt="Image 4">
+    <img src="img5.jpg" alt="Image 5">
   </div>
-</section>
 
-<!-- Lightbox Items -->
-<div id="img1" class="lightbox">
-  <a href="#img5" class="prev">&#10094;</a>
-  <img src="img1.jpg" alt="">
-  <a href="#img2" class="next">&#10095;</a>
-  <a href="#" class="close">&times;</a>
+  <!-- Navigation buttons -->
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+  <!-- Dots -->
+  <div class="dots"></div>
 </div>
 
-<div id="img2" class="lightbox">
-  <a href="#img1" class="prev">&#10094;</a>
-  <img src="img2.jpg" alt="">
-  <a href="#img3" class="next">&#10095;</a>
-  <a href="#" class="close">&times;</a>
-</div>
+<style>
+/* Slider container */
+.slider {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
 
-<div id="img3" class="lightbox">
-  <a href="#img2" class="prev">&#10094;</a>
-  <img src="img3.jpg" alt="">
-  <a href="#img4" class="next">&#10095;</a>
-  <a href="#" class="close">&times;</a>
-</div>
+/* Images */
+.slides img {
+  width: 100%;
+  display: none;
+}
+.slides img.active {
+  display: block;
+}
 
-<div id="img4" class="lightbox">
-  <a href="#img3" class="prev">&#10094;</a>
-  <img src="img4.jpg" alt="">
-  <a href="#img5" class="next">&#10095;</a>
-  <a href="#" class="close">&times;</a>
-</div>
+/* Prev/Next buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
 
-<div id="img5" class="lightbox">
-  <a href="#img4" class="prev">&#10094;</a>
-  <img src="img5.jpg" alt="">
-  <a href="#img1" class="next">&#10095;</a>
-  <a href="#" class="close">&times;</a>
-</div>
+/* Dots */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.dots span {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  display: inline-block;
+  background-color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dots span.active {
+  background-color: white;
+  border: 2px solid #333;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .prev, .next {
+    background: rgba(255,255,255,0.3);
+    color: black;
+  }
+  .dots span {
+    background-color: #777;
+  }
+  .dots span.active {
+    background-color: #fff;
+    border: 2px solid #fff;
+  }
+}
+</style>
+
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slides img");
+const dotsContainer = document.querySelector(".dots");
+
+// Create dots
+slides.forEach((_, i) => {
+  let dot = document.createElement("span");
+  dot.onclick = () => showSlide(slideIndex = i);
+  dotsContainer.appendChild(dot);
+});
+
+let dots = document.querySelectorAll(".dots span");
+
+function moveSlide(n) {
+  showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+  if (n >= slides.length) slideIndex = 0;
+  if (n < 0) slideIndex = slides.length - 1;
+
+  slides.forEach(img => img.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
+
+  slides[slideIndex].classList.add("active");
+  dots[slideIndex].classList.add("active");
+}
+
+// Auto change slides every 4 seconds
+setInterval(() => {
+  moveSlide(1);
+}, 4000);
+
+// Initialize first slide
+showSlide(slideIndex);
+</script>
  <section class="socials">
     <h2>Follow & Contact</h2>
     <ul>
