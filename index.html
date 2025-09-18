@@ -421,66 +421,102 @@ showSlide(slideIndex);
 </script>
  <section class="socials">
     <h2>Follow & Contact</h2>
-<!-- Social Media & Contact Section -->
-<div class="social-media">
-  <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-  <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
-  <a href="https://tiktok.com/@bhattarai.biraj" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
-  <a href="mailto:contact@biraj-bhattarai.com.np" class="email"><i class="fas fa-envelope"></i></a>
-</div>
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Footer Links -->
+    <div class="footer-links">
+      <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Blog</a>
+      <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+      <a href="/terms-of-service" target="_blank">Terms of Service</a>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
+      <a href="https://tiktok.com/@bhattarai.biraj" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
+      <a href="mailto:contact@biraj-bhattarai.com.np" class="email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="footer-copy">
+      &copy; 2025 Biraj Bhattarai. All rights reserved.
+    </div>
+  </div>
+</footer>
 
 <!-- FontAwesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-.social-media {
-  display: flex;
-  gap: 20px;
-  justify-content: center; /* center on page */
-  margin: 30px 0;
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.social-media a {
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #1DB954; /* highlight on hover */
+}
+
+.footer-social {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   color: white;
-  font-size: 22px;
+  font-size: 18px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* Platform colors */
-.facebook { background: #3b5998; }
-.instagram { background: #E1306C; }
-.youtube { background: #FF0000; }
-.spotify { background: #1DB954; }
-.tiktok { background: #000000; color: #00F2EA; }
-.email { background: #555; }
+.footer-social .facebook { background: #3b5998; }
+.footer-social .instagram { background: #E1306C; }
+.footer-social .youtube { background: #FF0000; }
+.footer-social .spotify { background: #1DB954; }
+.footer-social .tiktok { background: #000; color: #00F2EA; }
+.footer-social .email { background: #555; }
 
-/* Hover effect */
-.social-media a:hover {
+.footer-social a:hover {
   transform: scale(1.2);
   box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
+.footer-copy {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
-  .social-media a { filter: brightness(1.2); }
+  .site-footer { background-color: #111; color: #fff; }
+  .footer-links a:hover { color: #1DB954; }
 }
 </style>
-
-<footer>
-  <div class="links">
-    <a href="/blog">Blog</a> |
-    <a href="/privacy">Privacy</a> |
-    <a href="/terms">Terms</a>
-  </div>
-
-  <p>© 2025 Biraj Bhattarai. All rights reserved.</p>
-</footer>
