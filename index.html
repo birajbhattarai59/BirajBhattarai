@@ -345,24 +345,36 @@ showSlide(slideIndex);
 </script>
  <section class="socials">
     <h2>Follow & Contact</h2>
-<!-- Footer -->
-<footer class="site-footer">
+<!-- Modern Responsive Footer -->
+<footer class="footer-modern">
   <div class="footer-container">
     <!-- Footer Links -->
     <div class="footer-links">
       <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Blog</a>
       <a href="/privacy-policy" target="_blank">Privacy Policy</a>
-      <a href="/terms-of-service" target="_blank">Terms of Service</a>
+      <a href="/terms-of-service" target="_blank">Terms</a>
     </div>
 
-    <!-- Social Media -->
-    <div class="footer-social">
-      <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
-      <a href="https://tiktok.com/@bhattarai.biraj" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
-      <a href="mailto:contact@biraj-bhattarai.com.np" class="email"><i class="fas fa-envelope"></i></a>
+    <!-- Social Media Icons (expand on hover) -->
+    <div class="footer-social-horizontal">
+      <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook">
+        <i class="fab fa-facebook-f"></i><span>Facebook</span>
+      </a>
+      <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram">
+        <i class="fab fa-instagram"></i><span>Instagram</span>
+      </a>
+      <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube">
+        <i class="fab fa-youtube"></i><span>YouTube</span>
+      </a>
+      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify">
+        <i class="fab fa-spotify"></i><span>Spotify</span>
+      </a>
+      <a href="https://tiktok.com/@bhattarai.biraj" target="_blank" class="tiktok">
+        <i class="fab fa-tiktok"></i><span>TikTok</span>
+      </a>
+      <a href="mailto:contact@biraj-bhattarai.com.np" class="email">
+        <i class="fas fa-envelope"></i><span>Email</span>
+      </a>
     </div>
 
     <div class="footer-copy">
@@ -371,16 +383,18 @@ showSlide(slideIndex);
   </div>
 </footer>
 
-<!-- FontAwesome for icons -->
+<!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-.site-footer {
-  background-color: #111;
-  color: #fff;
-  padding: 40px 20px;
+/* Footer Container */
+.footer-modern {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 30px 20px;
   text-align: center;
   font-family: Arial, sans-serif;
+  border-top: 1px solid #ddd;
 }
 
 .footer-container {
@@ -388,59 +402,99 @@ showSlide(slideIndex);
   margin: auto;
 }
 
+/* Footer Links */
+.footer-links {
+  margin-bottom: 20px;
+}
 .footer-links a {
-  color: #fff;
+  color: #333;
   margin: 0 15px;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 .footer-links a:hover {
-  color: #1DB954; /* highlight on hover */
+  color: #1DB954;
 }
 
-.footer-social {
-  margin: 20px 0;
+/* Horizontal expanding social media */
+.footer-social-horizontal {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* allows wrap on smaller screens */
 }
 
-.footer-social a {
+/* Icons contracted */
+.footer-social-horizontal a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 45px;
+  justify-content: flex-start;
+  gap: 10px;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 50px;
+  padding: 0 12px;
   height: 45px;
-  border-radius: 50%;
-  color: white;
-  font-size: 18px;
+  width: 45px; /* contracted */
+  color: #fff;
+  font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  white-space: nowrap;
 }
 
-/* Platform colors */
-.footer-social .facebook { background: #3b5998; }
-.footer-social .instagram { background: #E1306C; }
-.footer-social .youtube { background: #FF0000; }
-.footer-social .spotify { background: #1DB954; }
-.footer-social .tiktok { background: #000; color: #00F2EA; }
-.footer-social .email { background: #555; }
-
-.footer-social a:hover {
-  transform: scale(1.2);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+/* Hide platform name initially */
+.footer-social-horizontal a span {
+  opacity: 0;
+  margin-left: 5px;
+  transition: opacity 0.3s ease;
 }
 
+/* Expand on hover */
+.footer-social-horizontal a:hover {
+  width: 140px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.footer-social-horizontal a:hover span {
+  opacity: 1;
+}
+
+/* Platform Colors */
+.facebook { background: #3b5998; }
+.instagram { background: #E1306C; }
+.youtube { background: #FF0000; }
+.spotify { background: #1DB954; }
+.tiktok { background: #000; color: #00F2EA; }
+.email { background: #555; }
+
+/* Footer Copy */
 .footer-copy {
-  margin-top: 15px;
   font-size: 14px;
-  color: #aaa;
+  color: #666;
 }
 
-/* Dark mode support */
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .footer-social-horizontal a {
+    width: 45px; /* keep contracted smaller on mobile */
+    height: 45px;
+    padding: 0;
+  }
+  .footer-social-horizontal a span {
+    display: none; /* hide platform name on small screens */
+  }
+  .footer-links a {
+    margin: 5px 10px;
+    display: inline-block;
+  }
+}
+
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
-  .site-footer { background-color: #111; color: #fff; }
+  .footer-modern { background-color: #222; color: #ddd; border-top: 1px solid #444; }
+  .footer-links a { color: #ddd; }
   .footer-links a:hover { color: #1DB954; }
+  .footer-social-horizontal a { filter: brightness(1.2); }
 }
 </style>
