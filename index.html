@@ -345,37 +345,89 @@ showSlide(slideIndex);
 </script>
  <section class="socials">
     <h2>Follow & Contact</h2>
-<!-- Modern Responsive Footer -->
-<footer class="footer-modern">
-  <div class="footer-container">
-    <!-- Footer Links -->
-    <div class="footer-links">
-      <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Blog</a>
-      <a href="/privacy-policy" target="_blank">Privacy Policy</a>
-      <a href="/terms-of-service" target="_blank">Terms</a>
-    </div>
+<!-- Footer Social Icons Smooth -->
+<div class="footer-social-horizontal-smooth">
+  <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook">
+    <i class="fab fa-facebook-f"></i><span>Facebook</span>
+  </a>
+  <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram">
+    <i class="fab fa-instagram"></i><span>Instagram</span>
+  </a>
+  <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube">
+    <i class="fab fa-youtube"></i><span>YouTube</span>
+  </a>
+  <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify">
+    <i class="fab fa-spotify"></i><span>Spotify</span>
+  </a>
+  <a href="https://tiktok.com/@bhattarai.biraj" target="_blank" class="tiktok">
+    <i class="fab fa-tiktok"></i><span>TikTok</span>
+  </a>
+  <a href="mailto:contact@biraj-bhattarai.com.np" class="email">
+    <i class="fas fa-envelope"></i><span>Email</span>
+  </a>
+</div>
 
-    <!-- Social Media Icons (expand on hover) -->
-    <div class="footer-social-horizontal">
-      <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook">
-        <i class="fab fa-facebook-f"></i><span>Facebook</span>
-      </a>
-      <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram">
-        <i class="fab fa-instagram"></i><span>Instagram</span>
-      </a>
-      <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube">
-        <i class="fab fa-youtube"></i><span>YouTube</span>
-      </a>
-      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify">
-        <i class="fab fa-spotify"></i><span>Spotify</span>
-      </a>
-      <a href="https://tiktok.com/@bhattarai.biraj" target="_blank" class="tiktok">
-        <i class="fab fa-tiktok"></i><span>TikTok</span>
-      </a>
-      <a href="mailto:contact@biraj-bhattarai.com.np" class="email">
-        <i class="fas fa-envelope"></i><span>Email</span>
-      </a>
-    </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+.footer-social-horizontal-smooth {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Icon container */
+.footer-social-horizontal-smooth a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 0 12px;
+  height: 45px;
+  background-color: #333;
+  color: #fff;
+  font-weight: 500;
+  overflow: hidden;
+  transform: scale(1); /* use scale for smooth animation */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Icon only initially */
+.footer-social-horizontal-smooth a span {
+  display: inline-block;
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Smooth expand on hover */
+.footer-social-horizontal-smooth a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.footer-social-horizontal-smooth a:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Platform Colors */
+.facebook { background: #3b5998; }
+.instagram { background: #E1306C; }
+.youtube { background: #FF0000; }
+.spotify { background: #1DB954; }
+.tiktok { background: #000; color: #00F2EA; }
+.email { background: #555; }
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .footer-social-horizontal-smooth a span {
+    display: none; /* hide text on mobile */
+  }
+}
+</style>
 
     <div class="footer-copy">
       &copy; 2025 Biraj Bhattarai. All rights reserved.
