@@ -45,3 +45,14 @@ footer {
   display: block;
   margin: 0 auto;
 }
+/* Fix oversized gallery images on desktop */
+@media (min-width: 1024px) {
+  .slides img {
+    max-width: 800px;   /* Limit width */
+    max-height: 500px;  /* Limit height */
+    margin: 0 auto;     /* Center images */
+  }
+  .slides {
+    justify-content: center; /* Center all images in slider */
+  }
+}
