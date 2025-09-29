@@ -629,4 +629,18 @@
 <path d="" fill="#575756" transform="translate(0,0)"/>
 <path d="" fill="#575756" transform="translate(0,0)"/>
 <path d="" fill="#5C5C5A" transform="translate(0,0)"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.2" baseProfile="tiny"
+     width="256" height="256" viewBox="0 0 256 256">
+
+  <!-- White circle background (BIMI requirement) -->
+  <circle cx="128" cy="128" r="128" fill="#FFFFFF"/>
+
+  <!-- Your portrait SVG -->
+  <g transform="translate(40,40) scale(0.7)" fill="#000000">
+    <!-- Paste the paths from Biraj.svg here -->
+  </g>
+
+</svg>
 </svg>
