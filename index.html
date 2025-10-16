@@ -80,6 +80,79 @@
       color: var(--text);
     }
 
+    /* ===== Latest Blog Section ===== */
+    #latest-blog {
+      display: flex;
+      justify-content: center;
+      background: var(--bg);
+      padding: 40px 20px;
+    }
+    .blog-container {
+      background: var(--card);
+      color: var(--text);
+      border-radius: 12px;
+      max-width: 1000px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    #latest-blog h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: var(--text);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+    #blog-post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #blog-post-list li {
+      background: var(--card);
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s, background 0.3s;
+      border: 1px solid var(--border);
+    }
+    #blog-post-list li:hover {
+      transform: scale(1.02);
+      background: var(--border);
+    }
+    #blog-post-list img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+    #blog-post-list a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    #blog-post-list p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    @media (max-width: 700px) {
+      #blog-post-list li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      #blog-post-list img {
+        margin-bottom: 10px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
     /* ===== Container ===== */
     .container {
       max-width: 1200px;
@@ -220,7 +293,6 @@
     .spotify { background: #1DB954; }
     .social-icons a:hover { transform: scale(1.1); }
 
-    /* Dark Mode Footer */
     @media (prefers-color-scheme: dark) {
       footer {
         background: #222;
@@ -231,7 +303,6 @@
       .footer-links a:hover { color: var(--highlight); }
     }
 
-    /* ===== Responsive ===== */
     @media (max-width: 1024px) {
       .container { margin: 20px; }
       .spotify-embed { min-height: 380px; }
@@ -254,8 +325,6 @@
       .spotify-embed { height: auto; min-height: 380px; margin-top: 10px; }
       .youtube-embed { height: 220px; }
       .slides img { max-height: 300px; }
-      #blog-post-list li { flex-direction: column; align-items: flex-start; }
-      #blog-post-list img { margin-bottom: 10px; width: 100%; height: auto; }
     }
   </style>
 </head>
@@ -273,6 +342,14 @@
       </nav>
     </div>
   </header>
+
+  <!-- 🆕 Latest Blog Posts -->
+  <section id="latest-blog">
+    <div class="blog-container">
+      <h2><a href="https://blog.biraj-bhattarai.com.np" target="_blank" style="text-decoration:none; color:var(--text);">Latest Posts</a></h2>
+      <ul id="blog-post-list"></ul>
+    </div>
+  </section>
 
   <!-- Main -->
   <div class="container">
@@ -314,13 +391,6 @@
 
   <!-- Footer -->
   <footer>
-    <!-- Latest Blog Posts Section -->
-    <section id="latest-blog" style="padding: 40px 20px; font-family: Arial, sans-serif;">
-      <h2 style="text-align: center; margin-bottom: 30px;">Latest Posts</h2>
-      <ul id="blog-post-list" style="list-style: none; padding: 0; max-width: 900px; margin: 0 auto;"></ul>
-    </section>
-
-    <!-- Social Icons -->
     <div class="social-icons">
       <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
@@ -328,13 +398,11 @@
       <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
     </div>
 
-    <!-- Privacy + Terms -->
     <div class="footer-links">
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms</a>
     </div>
 
-    <!-- Copyright -->
     <div>&copy; 2025 Biraj Bhattarai</div>
   </footer>
 
@@ -343,40 +411,23 @@
   function displayPosts(json) {
       const posts = json.feed.entry.slice(0, 5);
       const list = document.getElementById('blog-post-list');
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const bgColor = isDark ? '#1e1e1e' : '#f9f9f9';
-      const postBg = isDark ? '#2a2a2a' : '#fff';
-      const postHover = isDark ? '#3a3a3a' : '#e0e0e0';
-      const textColor = isDark ? '#fff' : '#111';
-
-      document.getElementById('latest-blog').style.backgroundColor = bgColor;
-      document.getElementById('latest-blog').style.color = textColor;
-
+      list.innerHTML = "";
       posts.forEach(post => {
           const title = post.title.$t;
           const link = post.link.find(l => l.rel === 'alternate').href;
           const snippet = post.content ? post.content.$t.replace(/<[^>]+>/g, '').substring(0, 100) + '...' : '';
           let thumb = '';
           if(post.media$thumbnail) {
-              thumb = `<img src="${post.media$thumbnail.url}" style="width:100px;height:70px;object-fit:cover;margin-right:15px;border-radius:8px;">`;
+              thumb = `<img src="${post.media$thumbnail.url}" alt="${title}">`;
           }
           const li = document.createElement('li');
-          li.style.background = postBg;
-          li.style.marginBottom = '15px';
-          li.style.padding = '15px 20px';
-          li.style.borderRadius = '10px';
-          li.style.display = 'flex';
-          li.style.alignItems = 'center';
-          li.style.transition = 'transform 0.3s, background 0.3s';
           li.innerHTML = `
               ${thumb}
               <div>
-                  <a href="${link}" target="_blank" style="color: ${textColor}; text-decoration: none; font-weight: bold; font-size: 18px;">${title}</a>
-                  <p style="margin:5px 0 0 0; color: ${textColor}; font-size: 14px;">${snippet}</p>
+                  <a href="${link}" target="_blank">${title}</a>
+                  <p>${snippet}</p>
               </div>
           `;
-          li.onmouseover = () => { li.style.background = postHover; li.style.transform = 'scale(1.02)'; };
-          li.onmouseleave = () => { li.style.background = postBg; li.style.transform = 'scale(1)'; };
           list.appendChild(li);
       });
   }
@@ -419,11 +470,8 @@
       slideIndex++;
       showSlide(slideIndex);
     }, 5000);
-
-    // Init
     showSlide(slideIndex);
 
-    // Hamburger Menu Toggle
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('nav').classList.toggle('active');
     });
