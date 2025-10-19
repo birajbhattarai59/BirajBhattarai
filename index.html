@@ -13,6 +13,7 @@
   <meta name="description" content="Official website of Biraj Bhattarai — Nepali musical artist known for soulful instrumental compositions. Listen to music, view gallery, and read the latest blogs.">
   <meta name="keywords" content="Biraj Bhattarai, Nepali artist, music, Spotify, YouTube, blog, instrumental, acoustic, blues">
   <meta name="author" content="Biraj Bhattarai">
+  <meta name="robots" content="index, follow">
 
   <!-- ✅ Open Graph / Social Sharing -->
   <meta property="og:title" content="Biraj Bhattarai - Official Artist Website">
@@ -96,7 +97,7 @@
       color: var(--text);
     }
 
-    /* ===== Latest Blog Section ===== */
+    /* ===== Blog Section ===== */
     #latest-blog {
       display: flex;
       justify-content: center;
@@ -146,31 +147,38 @@
       margin-right: 15px;
       border-radius: 8px;
     }
-    #blog-post-list a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
+
+    /* ===== Toggle Sections ===== */
+    .toggle-header {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5rem;
+      margin: 30px 0 15px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 5px;
     }
-    #blog-post-list p {
-      margin: 5px 0 0;
-      font-size: 0.9rem;
-      color: var(--text);
+    .toggle-header i {
+      transition: transform 0.3s ease;
+    }
+    .toggle-header.active i {
+      transform: rotate(180deg);
+    }
+    .toggle-section {
+      max-height: 1000px;
+      overflow: hidden;
+      transition: max-height 0.6s ease, opacity 0.5s ease;
+      opacity: 1;
+    }
+    .toggle-section.collapsed {
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
     }
 
-    @media (max-width: 700px) {
-      #blog-post-list li {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      #blog-post-list img {
-        margin-bottom: 10px;
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    /* ===== Container ===== */
+    /* ===== Containers ===== */
     .container {
       max-width: 1200px;
       margin: 30px auto;
@@ -179,10 +187,6 @@
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
-    h1 { font-size: 2em; margin-bottom: 10px; }
-    h2 { margin-top: 30px; border-bottom: 2px solid var(--border); padding-bottom: 5px; }
-    p { margin: 12px 0; }
-
     img.profile {
       width: 100%;
       max-width: 600px;
@@ -284,73 +288,66 @@
   <header>
     <div class="header-container">
       <a href="#" class="logo">Biraj Bhattarai</a>
-      <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+      <button class="menu-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="#">Home</a>
         <a href="#music">Music</a>
         <a href="#gallery">Gallery</a>
-        <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Blog</a>
+        <a href="https://blog.biraj-bhattarai.com.np" target="_blank" rel="noopener noreferrer">Blog</a>
       </nav>
     </div>
   </header>
 
-  <!-- 🆕 Latest Blog Posts -->
+  <!-- Blog Section -->
   <section id="latest-blog">
     <div class="blog-container">
-      <h2><a href="https://blog.biraj-bhattarai.com.np" target="_blank" style="text-decoration:none; color:var(--text);">Latest Posts</a></h2>
+      <h2><a href="https://blog.biraj-bhattarai.com.np" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--text);">Latest Posts</a></h2>
       <ul id="blog-post-list"></ul>
     </div>
   </section>
-<section id="about">
-  <h2 style="cursor:pointer;" onclick="toggleAbout()">About Me <i class="fas fa-chevron-down" id="about-icon"></i></h2>
- <!-- Main -->
+
   <div class="container">
-    <img src="profile.jpg" alt="Biraj Bhattarai" class="profile" />
-    <h1>Biraj Bhattarai</h1>
-    <p>
-      Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart. 
-      Rooted in a passion for sound and emotion, Biraj blends acoustic and blues-inspired tones with modern musical expression, 
-      creating compositions that are soulful, immersive, and deeply human.
-    </p>
-    <p>
-      His musical journey began with a fascination for storytelling through sound — using instruments like guitar and piano to 
-      express feelings words often can’t. Each composition represents a piece of his personal journey, filled with emotion, 
-      reflection, and a love for the art of music itself.
-    </p>
-    <p>
-      Beyond composing and performing, Biraj is continuously exploring new styles, refining his sound, and connecting with 
-      listeners across platforms such as Spotify and YouTube. His dedication to growth and authenticity shines through 
-      every note he creates.
-    </p>
-
-    <h2>Discography</h2>
-    <p>Bhattarai's musical journey is marked by his commitment to continuous learning and growth.</p>
-
-    <section id="music">
-      <h2>Featured Music</h2>
-      <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/4Gk2R78JZtTlDC260YreCZ"></iframe>
-      <iframe class="youtube-embed" src="https://www.youtube.com/embed/dDeZY6Uge74" allowfullscreen></iframe>
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="toggle-header">About Me <i class="fas fa-chevron-down"></i></h2>
+      <div class="toggle-section">
+        <img src="profile.jpg" alt="Biraj Bhattarai" class="profile" loading="lazy" />
+        <h1>Biraj Bhattarai</h1>
+        <p>Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart...</p>
+      </div>
     </section>
 
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <div class="slider">
-        <div class="slides">
-          <img src="img1.jpg" alt="Gallery Image 1">
-          <img src="img2.jpg" alt="Gallery Image 2">
-          <img src="img3.jpg" alt="Gallery Image 3">
-          <img src="img4.jpg" alt="Gallery Image 4">
-          <img src="img5.jpg" alt="Gallery Image 5">
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
+    <!-- Music Section -->
+    <section id="music">
+      <h2 class="toggle-header">Featured Music <i class="fas fa-chevron-down"></i></h2>
+      <div class="toggle-section">
+        <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/4Gk2R78JZtTlDC260YreCZ"></iframe>
+        <iframe class="youtube-embed" src="https://www.youtube.com/embed/dDeZY6Uge74" allowfullscreen></iframe>
       </div>
-      <div class="dots">
-        <span class="dot active-dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+      <h2 class="toggle-header">Gallery <i class="fas fa-chevron-down"></i></h2>
+      <div class="toggle-section">
+        <div class="slider">
+          <div class="slides">
+            <img src="img1.jpg" alt="Gallery Image 1" loading="lazy">
+            <img src="img2.jpg" alt="Gallery Image 2" loading="lazy">
+            <img src="img3.jpg" alt="Gallery Image 3" loading="lazy">
+            <img src="img4.jpg" alt="Gallery Image 4" loading="lazy">
+            <img src="img5.jpg" alt="Gallery Image 5" loading="lazy">
+          </div>
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+        </div>
+        <div class="dots">
+          <span class="dot active-dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
       </div>
     </section>
   </div>
@@ -358,10 +355,10 @@
   <!-- Footer -->
   <footer>
     <div class="social-icons">
-      <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
+      <a href="https://facebook.com/birajbhattarae" target="_blank" rel="noopener noreferrer" class="facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/birazbhattarai" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@BirajBhattarai" target="_blank" rel="noopener noreferrer" class="youtube"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" rel="noopener noreferrer" class="spotify"><i class="fab fa-spotify"></i></a>
     </div>
 
     <div class="footer-links">
@@ -390,7 +387,7 @@
           li.innerHTML = `
               ${thumb}
               <div>
-                  <a href="${link}" target="_blank">${title}</a>
+                  <a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
                   <p>${snippet}</p>
               </div>
           `;
@@ -402,8 +399,10 @@
   document.body.appendChild(script);
   </script>
 
-  <!-- Slider Script -->
+  <!-- Slider + Menu + Toggle Script -->
   <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Slider
     let slideIndex = 0;
     const slides = document.querySelector('.slides');
     const images = document.querySelectorAll('.slides img');
@@ -417,32 +416,27 @@
       dots.forEach(d => d.classList.remove('active-dot'));
       dots[slideIndex].classList.add('active-dot');
     }
-
-    document.querySelector('.next').addEventListener('click', () => {
-      slideIndex++;
-      showSlide(slideIndex);
-    });
-    document.querySelector('.prev').addEventListener('click', () => {
-      slideIndex--;
-      showSlide(slideIndex);
-    });
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        slideIndex = i;
-        showSlide(slideIndex);
-      });
-    });
-
-    setInterval(() => {
-      slideIndex = (slideIndex + 1) % totalSlides;
-      showSlide(slideIndex);
-    }, 5000);
-
+    document.querySelector('.next').addEventListener('click', () => { slideIndex++; showSlide(slideIndex); });
+    document.querySelector('.prev').addEventListener('click', () => { slideIndex--; showSlide(slideIndex); });
+    dots.forEach((dot, i) => { dot.addEventListener('click', () => { slideIndex = i; showSlide(slideIndex); }); });
+    setInterval(() => { slideIndex = (slideIndex + 1) % totalSlides; showSlide(slideIndex); }, 5000);
     showSlide(slideIndex);
 
+    // Menu toggle
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('nav').classList.toggle('active');
     });
+
+    // Section toggles
+    const headers = document.querySelectorAll('.toggle-header');
+    headers.forEach(header => {
+      const section = header.nextElementSibling;
+      header.addEventListener('click', () => {
+        header.classList.toggle('active');
+        section.classList.toggle('collapsed');
+      });
+    });
+  });
   </script>
 </body>
 </html>
