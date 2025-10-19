@@ -6,442 +6,223 @@
      crossorigin="anonymous"></script>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biraj Bhattarai - Official Artist Website</title>
 
-  <!-- ✅ SEO & Meta Tags -->
+  <!-- SEO Meta -->
   <meta name="description" content="Official website of Biraj Bhattarai — Nepali musical artist known for soulful instrumental compositions. Listen to music, view gallery, and read the latest blogs.">
-  <meta name="keywords" content="Biraj Bhattarai, Nepali artist, music, Spotify, YouTube, blog, instrumental, acoustic, blues">
+  <meta name="keywords" content="Biraj Bhattarai, Nepali artist, music, Spotify, YouTube, blog, instrumental, acoustic blues">
   <meta name="author" content="Biraj Bhattarai">
 
-  <!-- ✅ Open Graph / Social Sharing -->
+  <!-- Open Graph Meta -->
   <meta property="og:title" content="Biraj Bhattarai - Official Artist Website">
   <meta property="og:description" content="Explore Biraj Bhattarai’s latest music, gallery, and blogs.">
   <meta property="og:image" content="profile.jpg">
   <meta property="og:url" content="https://biraj-bhattarai.com.np">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ✅ Favicon -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="profile.jpg">
-
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
     :root {
-      --bg: #f3f3f3;
-      --text: #222;
-      --card: #ffffff;
-      --border: #eeeeee;
-      --highlight: #0077cc;
+      --bg: #fff;
+      --text: #000;
+      --card: #f8f8f8;
+      --accent: #0077ff;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #121212;
-        --text: #f0f0f0;
+        --text: #f5f5f5;
         --card: #1e1e1e;
-        --border: #333;
-        --highlight: #4aa9ff;
+        --accent: #3399ff;
       }
     }
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
     }
-
-    /* ===== Header ===== */
     header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      text-align: center;
+      padding: 40px 20px;
     }
-    .header-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: var(--highlight);
-      text-decoration: none;
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
     }
     nav {
       display: flex;
-      gap: 15px;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      background: var(--card);
       flex-wrap: wrap;
     }
     nav a {
       color: var(--text);
       text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover { color: var(--highlight); }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    /* ===== Latest Blog Section ===== */
-    #latest-blog {
-      display: flex;
-      justify-content: center;
-      background: var(--bg);
-      padding: 40px 20px;
-    }
-    .blog-container {
-      background: var(--card);
-      color: var(--text);
-      border-radius: 12px;
-      max-width: 1000px;
-      width: 100%;
-      padding: 30px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-    #latest-blog h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 25px;
-      color: var(--text);
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 8px;
-    }
-    #blog-post-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #blog-post-list li {
-      background: var(--card);
-      margin-bottom: 15px;
-      padding: 15px 20px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      transition: transform 0.3s, background 0.3s;
-      border: 1px solid var(--border);
-    }
-    #blog-post-list li:hover {
-      transform: scale(1.02);
-      background: var(--border);
-    }
-    #blog-post-list img {
-      width: 100px;
-      height: 70px;
-      object-fit: cover;
-      margin-right: 15px;
-      border-radius: 8px;
-    }
-    #blog-post-list a {
-      color: var(--text);
-      text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
     }
-    #blog-post-list p {
-      margin: 5px 0 0;
-      font-size: 0.9rem;
-      color: var(--text);
+    nav a:hover {
+      color: var(--accent);
     }
-
-    @media (max-width: 700px) {
-      #blog-post-list li {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      #blog-post-list img {
-        margin-bottom: 10px;
-        width: 100%;
-        height: auto;
-      }
-    }
-
-    /* ===== Container ===== */
     .container {
-      max-width: 1200px;
-      margin: 30px auto;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 5px;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .gallery {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      height: 300px;
+    }
+    .gallery img {
+      width: 100%;
+      flex-shrink: 0;
+      transition: transform 0.6s ease-in-out;
+    }
+    footer {
+      text-align: center;
       padding: 20px;
       background: var(--card);
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    h1 { font-size: 2em; margin-bottom: 10px; }
-    h2 { margin-top: 30px; border-bottom: 2px solid var(--border); padding-bottom: 5px; }
-    p { margin: 12px 0; }
-
-    img.profile {
-      width: 100%;
-      max-width: 600px;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin: 0 auto 20px;
-      display: block;
-    }
-
-    iframe {
-      width: 100%;
-      border-radius: 12px;
-      border: none;
-    }
-    .spotify-embed { height: auto; min-height: 400px; margin-top: 20px; }
-    .youtube-embed { height: 400px; margin-top: 10px; }
-
-    /* ===== Gallery Slider ===== */
-    .slider { position: relative; width: 100%; overflow: hidden; border-radius: 12px; }
-    .slides { display: flex; transition: transform 0.5s ease-in-out; }
-    .slides img { flex: 0 0 100%; width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px; }
-
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-
-    .dots { text-align: center; margin-top: 10px; }
-    .dot { height: 12px; width: 12px; margin: 0 4px; background: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; }
-    .active-dot { background: var(--highlight); }
-
-    /* ===== Footer ===== */
-    footer {
-      background: var(--card);
-      padding: 25px 20px;
-      text-align: center;
-      border-top: 1px solid var(--border);
       color: var(--text);
     }
-    .footer-links {
-      margin: 10px 0;
-      font-size: 0.85rem;
-    }
-    .footer-links a {
+    .socials a {
+      color: var(--text);
       margin: 0 10px;
+      font-size: 20px;
       text-decoration: none;
-      color: var(--text);
-      font-weight: 400;
     }
-    .footer-links a:hover { color: var(--highlight); }
-
-    .social-icons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .social-icons a {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      color: white;
-      transition: 0.3s;
-    }
-    .facebook { background: #3b5998; }
-    .instagram { background: #E1306C; }
-    .youtube { background: #FF0000; }
-    .spotify { background: #1DB954; }
-    .social-icons a:hover { transform: scale(1.1); }
-
-    @media (max-width: 700px) {
-      header { padding: 8px 12px; }
-      .logo { font-size: 1.1rem; }
-      .menu-toggle { display: block; }
-      nav { display: none; flex-direction: column; width: 100%; margin-top: 10px; }
-      nav.active { display: flex; }
-      nav a { font-size: 0.9rem; padding: 5px 0; }
-      .container { padding: 15px; }
-      .youtube-embed { height: 220px; }
+    .socials a:hover {
+      color: var(--accent);
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+
   <header>
-    <div class="header-container">
-      <a href="#" class="logo">Biraj Bhattarai</a>
-      <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#music">Music</a>
-        <a href="#gallery">Gallery</a>
-        <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Blog</a>
-      </nav>
-    </div>
+    <img src="profile.jpg" alt="Biraj Bhattarai">
+    <h1>Biraj Bhattarai</h1>
+    <p>Official Website of Nepali Musical Artist</p>
   </header>
 
-  <!-- 🆕 Latest Blog Posts -->
-  <section id="latest-blog">
-    <div class="blog-container">
-      <h2><a href="https://blog.biraj-bhattarai.com.np" target="_blank" style="text-decoration:none; color:var(--text);">Latest Posts</a></h2>
-      <ul id="blog-post-list"></ul>
-    </div>
-  </section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#music">Music</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <!-- Main -->
   <div class="container">
-    <img src="profile.jpg" alt="Biraj Bhattarai" class="profile" />
-    <h1>Biraj Bhattarai</h1>
-    <p>
-      Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart. 
-      Rooted in a passion for sound and emotion, Biraj blends acoustic and blues-inspired tones with modern musical expression, 
-      creating compositions that are soulful, immersive, and deeply human.
-    </p>
-    <p>
-      His musical journey began with a fascination for storytelling through sound — using instruments like guitar and piano to 
-      express feelings words often can’t. Each composition represents a piece of his personal journey, filled with emotion, 
-      reflection, and a love for the art of music itself.
-    </p>
-    <p>
-      Beyond composing and performing, Biraj is continuously exploring new styles, refining his sound, and connecting with 
-      listeners across platforms such as Spotify and YouTube. His dedication to growth and authenticity shines through 
-      every note he creates.
-    </p>
 
-    <h2>Discography</h2>
-    <p>Bhattarai's musical journey is marked by his commitment to continuous learning and growth.</p>
-
-    <section id="music">
-      <h2>Featured Music</h2>
-      <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/4Gk2R78JZtTlDC260YreCZ"></iframe>
-      <iframe class="youtube-embed" src="https://www.youtube.com/embed/dDeZY6Uge74" allowfullscreen></iframe>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart. 
+        Rooted in a passion for sound and emotion, Biraj blends acoustic and blues-inspired tones with modern musical expression, 
+        creating compositions that are soulful, immersive, and deeply human.
+      </p>
+      <p>
+        His musical journey began with a fascination for storytelling through sound — using instruments like guitar and piano to 
+        express feelings words often can’t. Each composition represents a piece of his personal journey, filled with emotion, 
+        reflection, and a love for the art of music itself.
+      </p>
+      <p>
+        Beyond composing and performing, Biraj is continuously exploring new styles, refining his sound, and connecting with 
+        listeners across platforms such as Spotify and YouTube. His dedication to growth and authenticity shines through 
+        every note he creates.
+      </p>
     </section>
 
+    <!-- MUSIC SECTION -->
+    <section id="music">
+      <h2>Listen to My Music</h2>
+      <iframe src="https://open.spotify.com/embed/artist/6gU5U6cc2HSMXh3DHBmJqZ" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <br><br>
+      <iframe width="100%" height="352" src="https://www.youtube.com/embed?listType=user_uploads&list=birajbhattarae" allowfullscreen></iframe>
+    </section>
+
+    <!-- GALLERY SECTION -->
     <section id="gallery">
       <h2>Gallery</h2>
-      <div class="slider">
-        <div class="slides">
-          <img src="img1.jpg" alt="Gallery Image 1">
-          <img src="img2.jpg" alt="Gallery Image 2">
-          <img src="img3.jpg" alt="Gallery Image 3">
-          <img src="img4.jpg" alt="Gallery Image 4">
-          <img src="img5.jpg" alt="Gallery Image 5">
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
+      <div class="gallery" id="gallery-slider">
+        <img src="img1.jpg" alt="Gallery Image 1">
+        <img src="img2.jpg" alt="Gallery Image 2">
+        <img src="img3.jpg" alt="Gallery Image 3">
+        <img src="img4.jpg" alt="Gallery Image 4">
+        <img src="img5.jpg" alt="Gallery Image 5">
       </div>
-      <div class="dots">
-        <span class="dot active-dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog">
+      <h2>Latest Blog Posts</h2>
+      <iframe src="https://blog.biraj-bhattarai.com.np/" height="400"></iframe>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Follow me on social media or send a message for collaborations and updates.</p>
+      <div class="socials">
+        <a href="https://facebook.com/birajbhattarae" target="_blank">Facebook</a>
+        <a href="https://instagram.com/birajbhattarai" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@birajbhattarai" target="_blank">YouTube</a>
+        <a href="https://open.spotify.com/artist/6gU5U6cc2HSMXh3DHBmJqZ" target="_blank">Spotify</a>
       </div>
     </section>
   </div>
 
-  <!-- Footer -->
   <footer>
-    <div class="social-icons">
-      <a href="https://facebook.com/birajbhattarae" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com/birazbhattarai" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@BirajBhattarai" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
-    </div>
-
-    <div class="footer-links">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms</a>
-    </div>
-
-    <div>&copy; 2025 Biraj Bhattarai</div>
+    <p>&copy; 2025 Biraj Bhattarai. All rights reserved.</p>
   </footer>
 
-  <!-- Blog Fetch Script -->
   <script>
-  function displayPosts(json) {
-      const posts = json.feed.entry.slice(0, 5);
-      const list = document.getElementById('blog-post-list');
-      list.innerHTML = "";
-      posts.forEach(post => {
-          const title = post.title.$t;
-          const link = post.link.find(l => l.rel === 'alternate').href;
-          const snippet = post.content ? post.content.$t.replace(/<[^>]+>/g, '').substring(0, 100) + '...' : '';
-          let thumb = '';
-          if(post.media$thumbnail) {
-              thumb = `<img src="${post.media$thumbnail.url}" alt="${title}">`;
-          }
-          const li = document.createElement('li');
-          li.innerHTML = `
-              ${thumb}
-              <div>
-                  <a href="${link}" target="_blank">${title}</a>
-                  <p>${snippet}</p>
-              </div>
-          `;
-          list.appendChild(li);
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
-  }
-  const script = document.createElement('script');
-  script.src = 'https://blog.biraj-bhattarai.com.np/feeds/posts/default?alt=json-in-script&callback=displayPosts';
-  document.body.appendChild(script);
-  </script>
+    });
 
-  <!-- Slider Script -->
-  <script>
+    // Gallery Slider Fix
     let slideIndex = 0;
-    const slides = document.querySelector('.slides');
-    const images = document.querySelectorAll('.slides img');
-    const dots = document.querySelectorAll('.dot');
-    const totalSlides = images.length;
+    const slides = document.querySelectorAll('.gallery img');
+    const totalSlides = slides.length;
 
     function showSlide(index) {
-      if (index >= totalSlides) slideIndex = 0;
-      if (index < 0) slideIndex = totalSlides - 1;
-      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-      dots.forEach(d => d.classList.remove('active-dot'));
-      dots[slideIndex].classList.add('active-dot');
+      const offset = -index * 100;
+      slides.forEach(img => img.style.transform = `translateX(${offset}%)`);
     }
-
-    document.querySelector('.next').addEventListener('click', () => {
-      slideIndex++;
-      showSlide(slideIndex);
-    });
-    document.querySelector('.prev').addEventListener('click', () => {
-      slideIndex--;
-      showSlide(slideIndex);
-    });
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        slideIndex = i;
-        showSlide(slideIndex);
-      });
-    });
 
     setInterval(() => {
       slideIndex = (slideIndex + 1) % totalSlides;
       showSlide(slideIndex);
     }, 5000);
-
-    showSlide(slideIndex);
-
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('nav').classList.toggle('active');
-    });
   </script>
+
 </body>
 </html>
