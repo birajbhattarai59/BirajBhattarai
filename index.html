@@ -8,6 +8,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biraj Bhattarai - Official Artist Website</title>
+
+  <!-- ✅ SEO & Meta Tags -->
+  <meta name="description" content="Official website of Biraj Bhattarai — Nepali musical artist known for soulful instrumental compositions. Listen to music, view gallery, and read the latest blogs.">
+  <meta name="keywords" content="Biraj Bhattarai, Nepali artist, music, Spotify, YouTube, blog, instrumental, acoustic, blues">
+  <meta name="author" content="Biraj Bhattarai">
+
+  <!-- ✅ Open Graph / Social Sharing -->
+  <meta property="og:title" content="Biraj Bhattarai - Official Artist Website">
+  <meta property="og:description" content="Explore Biraj Bhattarai’s latest music, gallery, and blogs.">
+  <meta property="og:image" content="profile.jpg">
+  <meta property="og:url" content="https://biraj-bhattarai.com.np">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="profile.jpg">
+
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -33,6 +49,7 @@
       font-family: "Segoe UI", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+      scroll-behavior: smooth;
     }
 
     /* ===== Header ===== */
@@ -70,7 +87,6 @@
     }
     nav a:hover { color: var(--highlight); }
 
-    /* Hamburger Menu */
     .menu-toggle {
       display: none;
       background: none;
@@ -141,6 +157,7 @@
       font-size: 0.9rem;
       color: var(--text);
     }
+
     @media (max-width: 700px) {
       #blog-post-list li {
         flex-direction: column;
@@ -168,7 +185,7 @@
 
     img.profile {
       width: 100%;
-      max-width: 600px; 
+      max-width: 600px;
       max-height: 400px;
       object-fit: cover;
       border-radius: 12px;
@@ -176,50 +193,18 @@
       display: block;
     }
 
-    /* Embed Frames */
     iframe {
       width: 100%;
       border-radius: 12px;
       border: none;
     }
-    .spotify-embed {
-      height: auto;
-      min-height: 400px;
-      margin-top: 20px;
-    }
-    .youtube-embed {
-      height: 400px;
-      margin-top: 10px;
-    }
+    .spotify-embed { height: auto; min-height: 400px; margin-top: 20px; }
+    .youtube-embed { height: 400px; margin-top: 10px; }
 
     /* ===== Gallery Slider ===== */
-    .slider {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      margin: auto;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 100%;
-    }
-    .slides img {
-      flex: 0 0 100%;
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-    @media (min-width: 1024px) {
-      .slides img {
-        max-width: 900px;
-        max-height: 500px;
-        margin: 0 auto;
-      }
-    }
+    .slider { position: relative; width: 100%; overflow: hidden; border-radius: 12px; }
+    .slides { display: flex; transition: transform 0.5s ease-in-out; }
+    .slides img { flex: 0 0 100%; width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px; }
 
     .prev, .next {
       position: absolute;
@@ -234,38 +219,27 @@
     }
     .prev { left: 10px; }
     .next { right: 10px; }
-    .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 4px;
-      background: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-    }
+
+    .dots { text-align: center; margin-top: 10px; }
+    .dot { height: 12px; width: 12px; margin: 0 4px; background: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; }
     .active-dot { background: var(--highlight); }
 
     /* ===== Footer ===== */
     footer {
-      background: #f8f8f8;
+      background: var(--card);
       padding: 25px 20px;
       text-align: center;
-      border-top: 1px solid #ddd;
-      color: #333;
+      border-top: 1px solid var(--border);
+      color: var(--text);
     }
     .footer-links {
       margin: 10px 0;
       font-size: 0.85rem;
-      color: #666;
     }
     .footer-links a {
       margin: 0 10px;
       text-decoration: none;
-      color: #666;
+      color: var(--text);
       font-weight: 400;
     }
     .footer-links a:hover { color: var(--highlight); }
@@ -293,38 +267,15 @@
     .spotify { background: #1DB954; }
     .social-icons a:hover { transform: scale(1.1); }
 
-    @media (prefers-color-scheme: dark) {
-      footer {
-        background: #222;
-        color: #ddd;
-        border-top: 1px solid #444;
-      }
-      .footer-links a { color: #aaa; }
-      .footer-links a:hover { color: var(--highlight); }
-    }
-
-    @media (max-width: 1024px) {
-      .container { margin: 20px; }
-      .spotify-embed { min-height: 380px; }
-      .youtube-embed { height: 300px; }
-      .slides img { max-height: 400px; }
-    }
     @media (max-width: 700px) {
       header { padding: 8px 12px; }
       .logo { font-size: 1.1rem; }
       .menu-toggle { display: block; }
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-      }
+      nav { display: none; flex-direction: column; width: 100%; margin-top: 10px; }
       nav.active { display: flex; }
       nav a { font-size: 0.9rem; padding: 5px 0; }
       .container { padding: 15px; }
-      .spotify-embed { height: auto; min-height: 380px; margin-top: 10px; }
       .youtube-embed { height: 220px; }
-      .slides img { max-height: 300px; }
     }
   </style>
 </head>
@@ -355,7 +306,21 @@
   <div class="container">
     <img src="profile.jpg" alt="Biraj Bhattarai" class="profile" />
     <h1>Biraj Bhattarai</h1>
-    <p>Biraj Bhattarai is an instrumental musical artist known for his talent in composing and performing captivating melodies.</p>
+    <p>
+      Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart. 
+      Rooted in a passion for sound and emotion, Biraj blends acoustic and blues-inspired tones with modern musical expression, 
+      creating compositions that are soulful, immersive, and deeply human.
+    </p>
+    <p>
+      His musical journey began with a fascination for storytelling through sound — using instruments like guitar and piano to 
+      express feelings words often can’t. Each composition represents a piece of his personal journey, filled with emotion, 
+      reflection, and a love for the art of music itself.
+    </p>
+    <p>
+      Beyond composing and performing, Biraj is continuously exploring new styles, refining his sound, and connecting with 
+      listeners across platforms such as Spotify and YouTube. His dedication to growth and authenticity shines through 
+      every note he creates.
+    </p>
 
     <h2>Discography</h2>
     <p>Bhattarai's musical journey is marked by his commitment to continuous learning and growth.</p>
@@ -466,10 +431,12 @@
         showSlide(slideIndex);
       });
     });
+
     setInterval(() => {
-      slideIndex++;
+      slideIndex = (slideIndex + 1) % totalSlides;
       showSlide(slideIndex);
     }, 5000);
+
     showSlide(slideIndex);
 
     document.querySelector('.menu-toggle').addEventListener('click', () => {
