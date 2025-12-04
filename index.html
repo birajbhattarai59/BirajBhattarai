@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google AdSense Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255792327378182"
      crossorigin="anonymous"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- ✅ Title -->
   <title>Biraj Bhattarai - Official Artist Website</title>
 
-  <!-- ✅ SEO & Meta Tags -->
   <meta name="description" content="Official website of Biraj Bhattarai — Nepali musical artist known for soulful instrumental compositions. Listen to music, view gallery, and read the latest blogs.">
   <meta name="keywords" content="Biraj Bhattarai, Nepali artist, music, Spotify, YouTube, blog, instrumental, acoustic, blues">
   <meta name="author" content="Biraj Bhattarai">
   <meta name="robots" content="index, follow">
 
-  <!-- ✅ Open Graph / Social Sharing -->
   <meta property="og:title" content="Biraj Bhattarai - Official Artist Website">
   <meta property="og:description" content="Explore Biraj Bhattarai’s latest music, gallery, and blogs.">
   <meta property="og:image" content="profile.jpg">
   <meta property="og:url" content="https://biraj-bhattarai.com.np">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ✅ Favicon -->
   <link rel="icon" href="Biraj.svg" type="image/svg+xml">
   <link rel="alternate icon" href="favicon.png" type="image/png">
 
-  <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -82,6 +76,13 @@
       font-weight: bold;
       color: var(--highlight);
       text-decoration: none;
+      /* IMPROVEMENT: Apply styling directly to H1 inside logo for consistency */
+    }
+    .logo h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--highlight);
+        margin: 0; /* Remove default margin from H1 */
     }
     .logo-icon {
       width: 28px;
@@ -111,7 +112,7 @@
       color: var(--text);
     }
 
-    /* ===== Blog Section ===== */
+    /* ===== Blog Section (CSS fix for inline style) ===== */
     #latest-blog {
       display: flex;
       justify-content: center;
@@ -134,6 +135,11 @@
       color: var(--text);
       border-bottom: 2px solid var(--border);
       padding-bottom: 8px;
+    }
+    /* IMPROVEMENT: Style for the anchor in the H2 (was inline) */
+    #latest-blog h2 a {
+      text-decoration: none; 
+      color: var(--text);
     }
     #blog-post-list {
       list-style: none;
@@ -162,7 +168,7 @@
       border-radius: 8px;
     }
 
-    /* ===== Toggle Sections ===== */
+    /* ===== Toggle Sections (Default to expanded for #about) ===== */
     .toggle-header {
       cursor: pointer;
       user-select: none;
@@ -298,12 +304,11 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="header-container">
       <a href="#" class="logo">
         <img src="Biraj.svg" alt="Biraj Bhattarai Logo" class="logo-icon">
-        Biraj Bhattarai
+        <h1>Biraj Bhattarai</h1>
       </a>
       <button class="menu-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
       <nav>
@@ -315,48 +320,45 @@
     </div>
   </header>
 
-  <!-- Blog Section -->
   <section id="latest-blog">
     <div class="blog-container">
-      <h2><a href="https://blog.biraj-bhattarai.com.np" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--text);">Latest Posts</a></h2>
+      <h2><a href="https://blog.biraj-bhattarai.com.np" target="_blank" rel="noopener noreferrer">Latest Posts</a></h2>
       <ul id="blog-post-list"></ul>
     </div>
   </section>
 
   <div class="container">
-    <!-- About Section -->
     <section id="about">
-      <h2 class="toggle-header">About Me <i class="fas fa-chevron-down"></i></h2>
+      <h2 class="toggle-header active">About Me <i class="fas fa-chevron-down"></i></h2>
       <div class="toggle-section">
         <img src="profile.jpg" alt="Biraj Bhattarai" class="profile" loading="lazy" />
-        <h1>Biraj Bhattarai</h1>
-        <p>Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart...</p>
+        <p>Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart. His compositions blend acoustic fingerstyle with touches of blues and traditional Nepali folk influences, creating a unique and soulful sound...</p>
       </div>
     </section>
 
-    <!-- Music Section -->
     <section id="music">
       <h2 class="toggle-header">Featured Music <i class="fas fa-chevron-down"></i></h2>
-      <div class="toggle-section">
-        <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/4Gk2R78JZtTlDC260YreCZ"></iframe>
-        <iframe class="youtube-embed" src="https://www.youtube.com/embed/dDeZY6Uge74" allowfullscreen></iframe>
+      <div class="toggle-section collapsed">
+        <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/4Gk2R78JZtTlDC260YreCZ" 
+          sandbox="allow-scripts allow-same-origin allow-popups" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="youtube-embed" src="https://www.youtube.com/embed/dDeZY6Uge74" allowfullscreen
+          sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery">
       <h2 class="toggle-header">Gallery <i class="fas fa-chevron-down"></i></h2>
-      <div class="toggle-section">
+      <div class="toggle-section collapsed">
         <div class="slider">
           <div class="slides">
-            <img src="img1.jpg" alt="Gallery Image 1" loading="lazy">
-            <img src="img2.jpg" alt="Gallery Image 2" loading="lazy">
-            <img src="img3.jpg" alt="Gallery Image 3" loading="lazy">
-            <img src="img4.jpg" alt="Gallery Image 4" loading="lazy">
-            <img src="img5.jpg" alt="Gallery Image 5" loading="lazy">
+            <img src="img1.jpg" alt="Biraj Bhattarai live performance" loading="lazy">
+            <img src="img2.jpg" alt="Biraj Bhattarai recording session" loading="lazy">
+            <img src="img3.jpg" alt="Acoustic guitar close up" loading="lazy">
+            <img src="img4.jpg" alt="Album art" loading="lazy">
+            <img src="img5.jpg" alt="Biraj Bhattarai on stage" loading="lazy">
           </div>
-          <button class="prev">&#10094;</button>
-          <button class="next">&#10095;</button>
+          <button class="prev">❮</button>
+          <button class="next">❯</button>
         </div>
         <div class="dots">
           <span class="dot active-dot"></span>
@@ -368,13 +370,12 @@
       </div>
     </section>
   </div>
- <!-- Footer -->
-  <footer>
+ <footer>
     <div class="social-icons">
-      <a href="https://facebook.com/birajbhattarae" target="_blank" rel="noopener noreferrer" class="facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com/birazbhattarai" target="_blank" rel="noopener noreferrer" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@BirajBhattarai" target="_blank" rel="noopener noreferrer" class="youtube"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" rel="noopener noreferrer" class="spotify"><i class="fab fa-spotify"></i></a>
+      <a href="https://facebook.com/birajbhattarae" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/birazbhattarai" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@BirajBhattarai" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" rel="noopener noreferrer" class="spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
     </div>
 
     <div class="footer-links">
@@ -382,43 +383,50 @@
       <a href="/terms.html">Terms</a>
     </div>
 
-    <div>&copy; 2025 Biraj Bhattarai</div>
+    <div>© 2025 Biraj Bhattarai</div>
   </footer>
 
-  <!-- Blog Fetch Script -->
   <script>
   function displayPosts(json) {
-      const posts = json.feed.entry.slice(0, 5);
       const list = document.getElementById('blog-post-list');
       list.innerHTML = "";
-      posts.forEach(post => {
-          const title = post.title.$t;
-          const link = post.link.find(l => l.rel === 'alternate').href;
-          const snippet = post.content ? post.content.$t.replace(/<[^>]+>/g, '').substring(0, 100) + '...' : '';
-          let thumb = '';
-          if(post.media$thumbnail) {
-              thumb = `<img src="${post.media$thumbnail.url}" alt="${title}">`;
-          }
-          const li = document.createElement('li');
-          li.innerHTML = `
-              ${thumb}
-              <div>
-                  <a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
-                  <p>${snippet}</p>
-              </div>
-          `;
-          list.appendChild(li);
-      });
+      // IMPROVEMENT: Added Try/Catch block for robust error handling
+      try {
+          const posts = json.feed.entry.slice(0, 5);
+          posts.forEach(post => {
+              const title = post.title.$t;
+              // Safely find the alternate link
+              const linkObj = post.link.find(l => l.rel === 'alternate');
+              const link = linkObj ? linkObj.href : '#';
+              // Basic snippet generation
+              const snippet = post.content ? post.content.$t.replace(/<[^>]+>/g, '').substring(0, 100) + '...' : 'Click to read full post.';
+              let thumb = '';
+              if(post.media$thumbnail) {
+                  thumb = `<img src="${post.media$thumbnail.url}" alt="${title}">`;
+              }
+              const li = document.createElement('li');
+              li.innerHTML = `
+                  ${thumb}
+                  <div>
+                      <a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
+                      <p>${snippet}</p>
+                  </div>
+              `;
+              list.appendChild(li);
+          });
+      } catch (e) {
+        list.innerHTML = `<li><p>Could not load recent blog posts. <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Visit the blog</a>.</p></li>`;
+        console.error("Failed to parse or display blog posts:", e);
+      }
   }
   const script = document.createElement('script');
   script.src = 'https://blog.biraj-bhattarai.com.np/feeds/posts/default?alt=json-in-script&callback=displayPosts';
   document.body.appendChild(script);
   </script>
 
-  <!-- Slider + Menu + Toggle Script -->
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Slider
+    // Slider functionality
     let slideIndex = 0;
     const slides = document.querySelector('.slides');
     const images = document.querySelectorAll('.slides img');
@@ -438,15 +446,19 @@
     setInterval(() => { slideIndex = (slideIndex + 1) % totalSlides; showSlide(slideIndex); }, 5000);
     showSlide(slideIndex);
 
-    // Menu toggle
+    // Menu toggle functionality
     document.querySelector('.menu-toggle').addEventListener('click', () => {
       document.querySelector('nav').classList.toggle('active');
     });
 
-    // Section toggles
+    // Section toggles functionality
     const headers = document.querySelectorAll('.toggle-header');
     headers.forEach(header => {
       const section = header.nextElementSibling;
+      
+      // IMPROVEMENT: Ensure only the first section ('#about') is open on load (done via initial class setting)
+      // Any sections that start with 'collapsed' class in HTML will be collapsed initially.
+      
       header.addEventListener('click', () => {
         header.classList.toggle('active');
         section.classList.toggle('collapsed');
