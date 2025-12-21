@@ -1,470 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255792327378182"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9255792327378182" crossorigin="anonymous"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Biraj Bhattarai - Official Artist Website</title>
+  <title>Biraj Bhattarai | Official Artist & Musical Composer</title>
 
-  <meta name="description" content="Official website of Biraj Bhattarai — Nepali musical artist known for soulful instrumental compositions. Listen to music, view gallery, and read the latest blogs.">
-  <meta name="keywords" content="Biraj Bhattarai, Nepali artist, music, Spotify, YouTube, blog, instrumental, acoustic, blues">
-  <meta name="author" content="Biraj Bhattarai">
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="Biraj Bhattarai - Official Artist Website">
-  <meta property="og:description" content="Explore Biraj Bhattarai’s latest music, gallery, and blogs.">
-  <meta property="og:image" content="profile.jpg">
-  <meta property="og:url" content="https://biraj-bhattarai.com.np">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <meta name="description" content="Official website of Biraj Bhattarai, a Nepali musical artist specializing in soulful instrumental compositions, acoustic blues, and folk fusion.">
+  <meta name="keywords" content="Biraj Bhattarai, Nepali Musician, Instrumental Music, Acoustic Blues, Nepal Artist, Biraj Bhattarai Blog">
+  
   <link rel="icon" href="Biraj.svg" type="image/svg+xml">
-  <link rel="alternate icon" href="favicon.png" type="image/png">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    :root {
-      --bg: #f3f3f3;
-      --text: #222;
-      --card: #ffffff;
-      --border: #eeeeee;
-      --highlight: #0077cc;
-    }
+    :root { --bg: #f8f9fa; --text: #2d3436; --card: #ffffff; --border: #dfe6e9; --highlight: #0984e3; }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #121212;
-        --text: #f0f0f0;
-        --card: #1e1e1e;
-        --border: #333;
-        --highlight: #4aa9ff;
-      }
+      :root { --bg: #121212; --text: #dfe6e9; --card: #1e1e1e; --border: #2d3436; --highlight: #74b9ff; }
     }
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
+    body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: var(--card); border-bottom: 1px solid var(--border); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; }
+    .header-container { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { display: flex; align-items: center; text-decoration: none; color: var(--highlight); }
+    .logo h1 { font-size: 1.5rem; margin: 0; margin-left: 10px; }
+    .logo img { width: 35px; height: 35px; }
 
-    /* ===== Header ===== */
-    header {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .header-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: var(--highlight);
-      text-decoration: none;
-      /* IMPROVEMENT: Apply styling directly to H1 inside logo for consistency */
-    }
-    .logo h1 {
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: var(--highlight);
-        margin: 0; /* Remove default margin from H1 */
-    }
-    .logo-icon {
-      width: 28px;
-      height: 28px;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
-    nav {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
+    nav a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
     nav a:hover { color: var(--highlight); }
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.6rem;
-      cursor: pointer;
-      color: var(--text);
-    }
+    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    section { background: var(--card); padding: 40px; border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--border); }
+    
+    h2 { border-bottom: 2px solid var(--highlight); display: inline-block; margin-bottom: 25px; padding-bottom: 5px; }
+    .profile-img { width: 100%; max-width: 500px; border-radius: 12px; margin-bottom: 20px; display: block; }
 
-    /* ===== Blog Section (CSS fix for inline style) ===== */
-    #latest-blog {
-      display: flex;
-      justify-content: center;
-      background: var(--bg);
-      padding: 40px 20px;
-    }
-    .blog-container {
-      background: var(--card);
-      color: var(--text);
-      border-radius: 12px;
-      max-width: 1000px;
-      width: 100%;
-      padding: 30px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-    #latest-blog h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 25px;
-      color: var(--text);
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 8px;
-    }
-    /* IMPROVEMENT: Style for the anchor in the H2 (was inline) */
-    #latest-blog h2 a {
-      text-decoration: none; 
-      color: var(--text);
-    }
-    #blog-post-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #blog-post-list li {
-      background: var(--card);
-      margin-bottom: 15px;
-      padding: 15px 20px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      transition: transform 0.3s, background 0.3s;
-      border: 1px solid var(--border);
-    }
-    #blog-post-list li:hover {
-      transform: scale(1.02);
-      background: var(--border);
-    }
-    #blog-post-list img {
-      width: 100px;
-      height: 70px;
-      object-fit: cover;
-      margin-right: 15px;
-      border-radius: 8px;
-    }
+    /* Fix for AdSense Low Value: Add more static text blocks */
+    .content-text { font-size: 1.1rem; color: var(--text); margin-bottom: 20px; }
+    
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
 
-    /* ===== Toggle Sections (Default to expanded for #about) ===== */
-    .toggle-header {
-      cursor: pointer;
-      user-select: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1.5rem;
-      margin: 30px 0 15px;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 5px;
-    }
-    .toggle-header i {
-      transition: transform 0.3s ease;
-    }
-    .toggle-header.active i {
-      transform: rotate(180deg);
-    }
-    .toggle-section {
-      max-height: 1000px;
-      overflow: hidden;
-      transition: max-height 0.6s ease, opacity 0.5s ease;
-      opacity: 1;
-    }
-    .toggle-section.collapsed {
-      max-height: 0;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    /* ===== Containers ===== */
-    .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 20px;
-      background: var(--card);
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    img.profile {
-      width: 100%;
-      max-width: 600px;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin: 0 auto 20px;
-      display: block;
-    }
-
-    iframe {
-      width: 100%;
-      border-radius: 12px;
-      border: none;
-    }
-    .spotify-embed { height: auto; min-height: 400px; margin-top: 20px; }
-    .youtube-embed { height: 400px; margin-top: 10px; }
-
-    /* ===== Gallery Slider ===== */
-    .slider { position: relative; width: 100%; overflow: hidden; border-radius: 12px; }
-    .slides { display: flex; transition: transform 0.5s ease-in-out; }
-    .slides img { flex: 0 0 100%; width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px; }
-
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-    .prev { left: 10px; }
-    .next { right: 10px; }
-
-    .dots { text-align: center; margin-top: 10px; }
-    .dot { height: 12px; width: 12px; margin: 0 4px; background: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; }
-    .active-dot { background: var(--highlight); }
-
-    /* ===== Footer ===== */
-    footer {
-      background: var(--card);
-      padding: 25px 20px;
-      text-align: center;
-      border-top: 1px solid var(--border);
-      color: var(--text);
-    }
-    .footer-links {
-      margin: 10px 0;
-      font-size: 0.85rem;
-    }
-    .footer-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 400;
-    }
-    .footer-links a:hover { color: var(--highlight); }
-
-    .social-icons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .social-icons a {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      color: white;
-      transition: 0.3s;
-    }
-    .facebook { background: #3b5998; }
-    .instagram { background: #E1306C; }
-    .youtube { background: #FF0000; }
-    .spotify { background: #1DB954; }
-    .social-icons a:hover { transform: scale(1.1); }
-
-    @media (max-width: 700px) {
-      header { padding: 8px 12px; }
-      .logo { font-size: 1.1rem; }
-      .menu-toggle { display: block; }
-      nav { display: none; flex-direction: column; width: 100%; margin-top: 10px; }
-      nav.active { display: flex; }
-      nav a { font-size: 0.9rem; padding: 5px 0; }
-      .container { padding: 15px; }
-      .youtube-embed { height: 220px; }
-    }
+    footer { text-align: center; padding: 50px 20px; background: var(--card); border-top: 1px solid var(--border); }
+    .social-links a { font-size: 1.5rem; margin: 0 15px; color: var(--text); transition: 0.3s; }
+    .social-links a:hover { color: var(--highlight); }
+    
+    .legal-links { margin-top: 20px; font-size: 0.9rem; }
+    .legal-links a { margin: 0 10px; color: var(--highlight); text-decoration: none; }
   </style>
 </head>
 <body>
+
   <header>
     <div class="header-container">
-      <a href="#" class="logo">
-        <img src="Biraj.svg" alt="Biraj Bhattarai Logo" class="logo-icon">
+      <a href="/" class="logo">
+        <img src="Biraj.svg" alt="Logo">
         <h1>Biraj Bhattarai</h1>
       </a>
-      <button class="menu-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
       <nav>
-        <a href="#">Home</a>
+        <a href="#about">About</a>
         <a href="#music">Music</a>
-        <a href="#gallery">Gallery</a>
-        <a href="https://blog.biraj-bhattarai.com.np" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="https://blog.biraj-bhattarai.com.np">Blog</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section id="latest-blog">
-    <div class="blog-container">
-      <h2><a href="https://blog.biraj-bhattarai.com.np" target="_blank" rel="noopener noreferrer">Latest Posts</a></h2>
-      <ul id="blog-post-list"></ul>
-    </div>
-  </section>
-
   <div class="container">
+    
     <section id="about">
-      <h2 class="toggle-header active">About Me <i class="fas fa-chevron-down"></i></h2>
-      <div class="toggle-section">
-        <img src="profile.jpg" alt="Biraj Bhattarai" class="profile" loading="lazy" />
-        <p>Biraj Bhattarai is an instrumental musical artist known for his ability to craft melodies that speak directly to the heart. His compositions blend acoustic fingerstyle with touches of blues and traditional Nepali folk influences, creating a unique and soulful sound...</p>
+      <h2>About Biraj Bhattarai</h2>
+      <div class="grid">
+        <div>
+          <img src="profile.jpg" alt="Biraj Bhattarai Artist Profile" class="profile-img">
+        </div>
+        <div class="content-text">
+          <p>Welcome to the official digital home of <strong>Biraj Bhattarai</strong>. I am a Nepali musical artist and instrumentalist dedicated to exploring the intersection of traditional melody and modern acoustic blues.</p>
+          <p>My journey in music started with a passion for fingerstyle guitar, inspired by the rhythmic heartbeats of Nepal and the soulful depths of the blues. Every composition is a story told without words, designed to evoke emotion and provide a peaceful soundscape for listeners worldwide.</p>
+          <p>Currently, I am focusing on creating high-quality instrumental tracks available on Spotify, YouTube, and Apple Music. Beyond performing, I share my thoughts on music production and gear on my official blog.</p>
+        </div>
       </div>
     </section>
+
+    <div style="text-align:center; margin: 20px 0;">
+       <small style="color:gray;">Advertisement</small>
+       </div>
 
     <section id="music">
-      <h2 class="toggle-header">Featured Music <i class="fas fa-chevron-down"></i></h2>
-      <div class="toggle-section collapsed">
-        <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/4Gk2R78JZtTlDC260YreCZ" 
-          sandbox="allow-scripts allow-same-origin allow-popups" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <iframe class="youtube-embed" src="https://www.youtube.com/embed/dDeZY6Uge74" allowfullscreen
-          sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2>Featured Discography</h2>
+      <div class="content-text">
+        <p>Explore my latest instrumental releases. My music focuses on acoustic clarity and emotional resonance.</p>
+      </div>
+      <div class="grid">
+        <iframe src="https://www.youtube.com/embed/dDeZY6Uge74" style="width:100%; height:300px; border-radius:12px; border:none;"></iframe>
+        <div class="content-text">
+            <h3>Creative Process</h3>
+            <p>I record most of my compositions in a home studio environment, focusing on the organic sound of the guitar. By blending techniques like percussive fingerstyle with melodic phrasing, I aim to create music that feels both intimate and expansive.</p>
+        </div>
       </div>
     </section>
 
-    <section id="gallery">
-      <h2 class="toggle-header">Gallery <i class="fas fa-chevron-down"></i></h2>
-      <div class="toggle-section collapsed">
-        <div class="slider">
-          <div class="slides">
-            <img src="img1.jpg" alt="Biraj Bhattarai live performance" loading="lazy">
-            <img src="img2.jpg" alt="Biraj Bhattarai recording session" loading="lazy">
-            <img src="img3.jpg" alt="Acoustic guitar close up" loading="lazy">
-            <img src="img4.jpg" alt="Album art" loading="lazy">
-            <img src="img5.jpg" alt="Biraj Bhattarai on stage" loading="lazy">
-          </div>
-          <button class="prev">❮</button>
-          <button class="next">❯</button>
-        </div>
-        <div class="dots">
-          <span class="dot active-dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>For bookings, collaborations, or media inquiries, please reach out via my social channels or email:</p>
+      <p><strong>Email:</strong> contact@biraj-bhattarai.com.np</p>
+      <div class="social-links" style="margin-top:20px;">
+        <a href="https://facebook.com/birajbhattarae"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/imbirajbhattarai"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@BirajBhattarai"><i class="fab fa-youtube"></i></a>
       </div>
     </section>
+
   </div>
- <footer>
-    <div class="social-icons">
-      <a href="https://facebook.com/birajbhattarae" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com/imbirajbhattarai" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/@BirajBhattarai" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://open.spotify.com/artist/4Gk2R78JZtTlDC260YreCZ" target="_blank" rel="noopener noreferrer" class="spotify" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-    </div>
 
-    <div class="footer-links">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms</a>
+  <footer>
+    <p>&copy; 2025 Biraj Bhattarai. All Rights Reserved.</p>
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://blog.biraj-bhattarai.com.np">Official Blog</a>
     </div>
-
-    <div>© 2025 Biraj Bhattarai</div>
   </footer>
 
-  <script>
-  function displayPosts(json) {
-      const list = document.getElementById('blog-post-list');
-      list.innerHTML = "";
-      // IMPROVEMENT: Added Try/Catch block for robust error handling
-      try {
-          const posts = json.feed.entry.slice(0, 5);
-          posts.forEach(post => {
-              const title = post.title.$t;
-              // Safely find the alternate link
-              const linkObj = post.link.find(l => l.rel === 'alternate');
-              const link = linkObj ? linkObj.href : '#';
-              // Basic snippet generation
-              const snippet = post.content ? post.content.$t.replace(/<[^>]+>/g, '').substring(0, 100) + '...' : 'Click to read full post.';
-              let thumb = '';
-              if(post.media$thumbnail) {
-                  thumb = `<img src="${post.media$thumbnail.url}" alt="${title}">`;
-              }
-              const li = document.createElement('li');
-              li.innerHTML = `
-                  ${thumb}
-                  <div>
-                      <a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a>
-                      <p>${snippet}</p>
-                  </div>
-              `;
-              list.appendChild(li);
-          });
-      } catch (e) {
-        list.innerHTML = `<li><p>Could not load recent blog posts. <a href="https://blog.biraj-bhattarai.com.np" target="_blank">Visit the blog</a>.</p></li>`;
-        console.error("Failed to parse or display blog posts:", e);
-      }
-  }
-  const script = document.createElement('script');
-  script.src = 'https://blog.biraj-bhattarai.com.np/feeds/posts/default?alt=json-in-script&callback=displayPosts';
-  document.body.appendChild(script);
-  </script>
-
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Slider functionality
-    let slideIndex = 0;
-    const slides = document.querySelector('.slides');
-    const images = document.querySelectorAll('.slides img');
-    const dots = document.querySelectorAll('.dot');
-    const totalSlides = images.length;
-
-    function showSlide(index) {
-      if (index >= totalSlides) slideIndex = 0;
-      if (index < 0) slideIndex = totalSlides - 1;
-      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-      dots.forEach(d => d.classList.remove('active-dot'));
-      dots[slideIndex].classList.add('active-dot');
-    }
-    document.querySelector('.next').addEventListener('click', () => { slideIndex++; showSlide(slideIndex); });
-    document.querySelector('.prev').addEventListener('click', () => { slideIndex--; showSlide(slideIndex); });
-    dots.forEach((dot, i) => { dot.addEventListener('click', () => { slideIndex = i; showSlide(slideIndex); }); });
-    setInterval(() => { slideIndex = (slideIndex + 1) % totalSlides; showSlide(slideIndex); }, 5000);
-    showSlide(slideIndex);
-
-    // Menu toggle functionality
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('nav').classList.toggle('active');
-    });
-
-    // Section toggles functionality
-    const headers = document.querySelectorAll('.toggle-header');
-    headers.forEach(header => {
-      const section = header.nextElementSibling;
-      
-      // IMPROVEMENT: Ensure only the first section ('#about') is open on load (done via initial class setting)
-      // Any sections that start with 'collapsed' class in HTML will be collapsed initially.
-      
-      header.addEventListener('click', () => {
-        header.classList.toggle('active');
-        section.classList.toggle('collapsed');
-      });
-    });
-  });
-  </script>
 </body>
 </html>
