@@ -1,58 +1,151 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-  color: #333;
+/* Variables for Easy Theme Management */
+:root { 
+  --bg: #f8f9fa; 
+  --text: #2d3436; 
+  --card: #ffffff; 
+  --border: #dfe6e9; 
+  --highlight: #0984e3; 
 }
-header, nav, footer {
-  background-color: #222;
-  color: white;
-  padding: 1em;
-  text-align: center;
-}
-nav a {
-  color: white;
-  margin: 0 1em;
-  text-decoration: none;
-}
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 1em;
-}
-footer {
-  font-size: 0.8em;
-}
-.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-.toggle-dark {
-  cursor: pointer;
-  padding: 0.5em 1em;
-  background: #444;
-  color: white;
-  border: none;
-}
-.profile-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 90% center;  /* pushes crop further right */
-  border: 3px solid #444;
-  display: block;
-  margin: 0 auto;
-}
-/* Fix oversized gallery images on desktop */
-@media (min-width: 1024px) {
-  .slides img {
-    max-width: 800px;   /* Limit width */
-    max-height: 500px;  /* Limit height */
-    margin: 0 auto;     /* Center images */
-  }
-  .slides {
-    justify-content: center; /* Center all images in slider */
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root { 
+    --bg: #121212; 
+    --text: #dfe6e9; 
+    --card: #1e1e1e; 
+    --border: #2d3436; 
+    --highlight: #74b9ff; 
   }
 }
+
+/* Global Styles */
+body { 
+  margin: 0; 
+  font-family: 'Inter', -apple-system, sans-serif; 
+  background: var(--bg); 
+  color: var(--text); 
+  line-height: 1.6; 
+}
+
+/* Header & Navigation */
+header { 
+  background: var(--card); 
+  border-bottom: 1px solid var(--border); 
+  padding: 15px 20px; 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+}
+
+.header-container { 
+  max-width: 1100px; 
+  margin: auto; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.logo { 
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+  color: var(--highlight); 
+}
+
+.logo h1 { font-size: 1.5rem; margin: 0; margin-left: 10px; }
+.logo img { width: 35px; height: 35px; }
+
+nav a { 
+  margin-left: 20px; 
+  text-decoration: none; 
+  color: var(--text); 
+  font-weight: 500; 
+  transition: 0.3s; 
+}
+
+nav a:hover { color: var(--highlight); }
+
+/* Layout Containers */
+.container { 
+  max-width: 1000px; 
+  margin: 40px auto; 
+  padding: 0 20px; 
+}
+
+section { 
+  background: var(--card); 
+  padding: 40px; 
+  border-radius: 16px; 
+  margin-bottom: 30px; 
+  border: 1px solid var(--border); 
+}
+
+h2 { 
+  border-bottom: 2px solid var(--highlight); 
+  display: inline-block; 
+  margin-bottom: 25px; 
+  padding-bottom: 5px; 
+}
+
+/* Images & Grid */
+.profile-img { 
+  width: 100%; 
+  max-width: 500px; 
+  border-radius: 12px; 
+  margin-bottom: 20px; 
+  display: block; 
+}
+
+.content-text { font-size: 1.1rem; color: var(--text); margin-bottom: 20px; }
+
+.grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 30px; 
+}
+
+@media (max-width: 768px) { 
+  .grid { grid-template-columns: 1fr; } 
+}
+
+/* Gallery Grid */
+.gallery-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+  gap: 15px; 
+  margin-top: 20px; 
+}
+
+.gallery-grid img { 
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+  transition: 0.3s; 
+  border: 1px solid var(--border); 
+}
+
+.gallery-grid img:hover { 
+  transform: scale(1.03); 
+  border-color: var(--highlight); 
+}
+
+/* Footer & Socials */
+footer { 
+  text-align: center; 
+  padding: 50px 20px; 
+  background: var(--card); 
+  border-top: 1px solid var(--border); 
+}
+
+.social-links a { 
+  font-size: 1.5rem; 
+  margin: 0 15px; 
+  color: var(--text); 
+  transition: 0.3s; 
+}
+
+.social-links a:hover { color: var(--highlight); }
+
+.legal-links { margin-top: 20px; font-size: 0.9rem; }
+.legal-links a { margin: 0 10px; color: var(--highlight); text-decoration: none; }
