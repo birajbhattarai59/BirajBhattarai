@@ -13,7 +13,64 @@
   
   <link rel="icon" href="Biraj.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Light Theme (Default) */
+    :root { 
+      --bg: #f8f9fa; 
+      --text: #2d3436; 
+      --card: #ffffff; 
+      --border: #dfe6e9; 
+      --highlight: #0984e3; 
+    }
+
+    /* Dark Theme Class */
+    body.dark-theme { 
+      --bg: #121212; 
+      --text: #dfe6e9; 
+      --card: #1e1e1e; 
+      --border: #2d3436; 
+      --highlight: #74b9ff; 
+    }
+
+    body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; transition: background 0.3s, color 0.3s; }
+    
+    header { background: var(--card); border-bottom: 1px solid var(--border); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; }
+    .header-container { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+    
+    .logo { display: flex; align-items: center; text-decoration: none; color: var(--highlight); }
+    .logo h1 { font-size: 1.5rem; margin: 0; margin-left: 10px; }
+    .logo img { width: 35px; height: 35px; }
+
+    nav { display: flex; align-items: center; }
+    nav a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--highlight); }
+
+    #theme-toggle { background: none; border: none; cursor: pointer; color: var(--text); margin-left: 20px; font-size: 1.2rem; transition: 0.3s; }
+    #theme-toggle:hover { color: var(--highlight); }
+
+    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    section { background: var(--card); padding: 40px; border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--border); }
+    
+    h2 { border-bottom: 2px solid var(--highlight); display: inline-block; margin-bottom: 25px; padding-bottom: 5px; }
+    .profile-img { width: 100%; max-width: 500px; border-radius: 12px; margin-bottom: 20px; display: block; }
+
+    .content-text { font-size: 1.1rem; color: var(--text); margin-bottom: 20px; }
+    
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
+    .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: 0.3s; border: 1px solid var(--border); }
+    .gallery-grid img:hover { transform: scale(1.03); border-color: var(--highlight); }
+
+    footer { text-align: center; padding: 50px 20px; background: var(--card); border-top: 1px solid var(--border); }
+    .social-links a { font-size: 1.5rem; margin: 0 15px; color: var(--text); transition: 0.3s; }
+    .social-links a:hover { color: var(--highlight); }
+    
+    .legal-links { margin-top: 20px; font-size: 0.9rem; }
+    .legal-links a { margin: 0 10px; color: var(--highlight); text-decoration: none; }
+  </style>
 </head>
 <body>
 
@@ -32,6 +89,9 @@
         <a href="#music">Music</a>
         <a href="https://blog.biraj-bhattarai.com.np">Blog</a>
         <a href="#contact">Contact</a>
+        <button id="theme-toggle" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -45,21 +105,21 @@
           <img src="profile.jpg" alt="Biraj Bhattarai Artist Profile" class="profile-img">
         </div>
         <div class="content-text">
-          <p><strong>Biraj Bhattarai</strong> is an independent musical artist and composer from Nepal. Known for his soulful instrumental tracks, he specializes in blending acoustic clarity with melodic blues and folk influences. His journey began in 2020, where he focused on developing a unique fingerstyle guitar technique and learning the intricacies of digital music distribution.</p>
-          <p>As a verified artist on platforms like YouTube and Spotify, Biraj has built a global audience purely through independent releases. His music is often described as intimate and expansive, reflecting the landscapes and cultural heartbeat of Nepal through a contemporary lens.</p>
+          <p><strong>Biraj Bhattarai</strong> is an independent musical artist and composer from Nepal. Specializing in soulful instrumental tracks, he blends acoustic clarity with melodic blues and folk influences. Since 2020, Biraj has focused on the organic sound of the guitar, mastering percussive fingerstyle and melodic phrasing.</p>
+          <p>With a verified presence on YouTube and Spotify, Biraj has built a global listener base by staying true to his independent roots. His compositions serve as an intimate reflection of modern creative expression from the heart of Nepal.</p>
         </div>
       </div>
     </section>
 
     <section id="gallery">
       <h2>Visual Journey</h2>
-      <p class="content-text">Snapshots from the studio and creative sessions.</p>
+      <p class="content-text">Glimpses into the creative process and studio sessions.</p>
       <div class="gallery-grid">
-        <img src="img1.jpg" alt="Biraj Bhattarai Studio Session">
+        <img src="img1.jpg" alt="Studio Session 1">
         <img src="img2.jpg" alt="Musical Composition">
-        <img src="img3.jpg" alt="Biraj Bhattarai Portrait">
-        <img src="img4.jpg" alt="Acoustic Performance">
-        <img src="img5.jpg" alt="Creative Process">
+        <img src="img3.jpg" alt="Artist Portrait">
+        <img src="img4.jpg" alt="Acoustic Session">
+        <img src="img5.jpg" alt="Behind the Scenes">
       </div>
     </section>
 
@@ -68,8 +128,8 @@
       <div class="grid">
         <iframe src="https://www.youtube.com/embed/dDeZY6Uge74" style="width:100%; height:300px; border-radius:12px; border:none;"></iframe>
         <div class="content-text">
-            <h3>Creative Process</h3>
-            <p>Most compositions are recorded in a home studio environment to preserve the organic, intimate sound of the acoustic guitar. By focusing on percussive fingerstyle and melodic phrasing, each track is designed to evoke deep emotional resonance.</p>
+            <h3>The Sound of the Guitar</h3>
+            <p>Every piece is recorded with a focus on natural resonance. By capturing the intimate nuances of the strings, Biraj creates an expansive soundscape that bridges the gap between traditional folk and contemporary blues.</p>
         </div>
       </div>
     </section>
@@ -78,7 +138,7 @@
       <h2>Connect with Biraj</h2>
       <div class="grid">
         <div style="background: var(--bg); border-radius: 12px; padding: 10px; text-align: center; border: 1px solid var(--border);">
-          <h3 style="margin-top:0;">Facebook Feed</h3>
+          <h3 style="margin-top:0;">Facebook Activity</h3>
           <div class="fb-page" 
             data-href="https://facebook.com/birajbhattarae" 
             data-tabs="timeline" 
@@ -97,17 +157,17 @@
           <div style="background: var(--bg); border-radius: 12px; padding: 25px; border: 1px solid var(--border); text-align: center;">
             <i class="fab fa-instagram" style="font-size: 2.5rem; color: #e1306c; margin-bottom:10px;"></i>
             <h3>Follow @imbirajbhattarai</h3>
-            <p>Get daily updates, musical snippets, and a look behind the scenes on Instagram.</p>
-            <a href="https://instagram.com/imbirajbhattarai" target="_blank" style="display: inline-block; padding: 12px 25px; background: var(--highlight); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s;">View Instagram</a>
+            <p>Follow for daily updates, guitar clips, and a look behind the curtain.</p>
+            <a href="https://instagram.com/imbirajbhattarai" target="_blank" style="display: inline-block; padding: 12px 25px; background: var(--highlight); color: white; text-decoration: none; border-radius: 30px; font-weight: bold;">View Profile</a>
           </div>
 
           <div style="background: var(--card); border-radius: 12px; padding: 25px; border: 1px solid var(--border);">
-            <h3>Contact Details</h3>
+            <h3>Inquiries</h3>
             <p><strong>Email:</strong> <a href="mailto:contact@biraj-bhattarai.com.np" style="color: var(--highlight); text-decoration: none;">contact@biraj-bhattarai.com.np</a></p>
-            <p><strong>Telegram:</strong> <a href="https://t.me/birajbhattarai" style="color: var(--highlight); text-decoration: none;">@birajbhattarai</a></p>
             <div class="social-links" style="margin-top:20px;">
               <a href="https://tiktok.com/@imbirajbhattarai"><i class="fab fa-tiktok"></i></a>
               <a href="https://youtube.com/@BirajBhattarai"><i class="fab fa-youtube"></i></a>
+              <a href="https://t.me/birajbhattarai"><i class="fab fa-telegram"></i></a>
             </div>
           </div>
         </div>
@@ -121,27 +181,40 @@
     <div class="legal-links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
-      <a href="https://blog.biraj-bhattarai.com.np">Official Blog</a>
     </div>
   </footer>
+
+  <script>
+    const themeBtn = document.getElementById("theme-toggle");
+    const themeIcon = themeBtn.querySelector("i");
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark-theme");
+      themeIcon.classList.replace("fa-moon", "fa-sun");
+    }
+
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+      const isDark = document.body.classList.contains("dark-theme");
+      themeIcon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  </script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
     "name": "Biraj Bhattarai",
-    "alternateName": "Biraj Bhattarae",
     "url": "https://biraj-bhattarai.com.np",
     "image": "https://biraj-bhattarai.com.np/profile.jpg",
-    "description": "Independent Nepali musical artist and composer specializing in instrumental and acoustic music.",
     "sameAs": [
       "https://facebook.com/birajbhattarae",
       "https://instagram.com/imbirajbhattarai",
       "https://youtube.com/@BirajBhattarai",
-      "https://tiktok.com/@imbirajbhattarai",
-      "https://t.me/birajbhattarai"
-    ],
-    "genre": ["Instrumental", "Acoustic Blues", "Folk Fusion"]
+      "https://tiktok.com/@imbirajbhattarai"
+    ]
   }
   </script>
 
