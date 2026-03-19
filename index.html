@@ -37,11 +37,15 @@
     h2 { border-bottom: 2px solid var(--highlight); display: inline-block; margin-bottom: 25px; padding-bottom: 5px; }
     .profile-img { width: 100%; max-width: 500px; border-radius: 12px; margin-bottom: 20px; display: block; }
 
-    /* Fix for AdSense Low Value: Add more static text blocks */
     .content-text { font-size: 1.1rem; color: var(--text); margin-bottom: 20px; }
     
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
     @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+    /* Gallery Grid Styles */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
+    .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: 0.3s; border: 1px solid var(--border); }
+    .gallery-grid img:hover { transform: scale(1.03); border-color: var(--highlight); }
 
     footer { text-align: center; padding: 50px 20px; background: var(--card); border-top: 1px solid var(--border); }
     .social-links a { font-size: 1.5rem; margin: 0 15px; color: var(--text); transition: 0.3s; }
@@ -53,6 +57,9 @@
 </head>
 <body>
 
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
+
   <header>
     <div class="header-container">
       <a href="/" class="logo">
@@ -61,6 +68,7 @@
       </a>
       <nav>
         <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
         <a href="#music">Music</a>
         <a href="https://blog.biraj-bhattarai.com.np">Blog</a>
         <a href="#contact">Contact</a>
@@ -77,49 +85,105 @@
           <img src="profile.jpg" alt="Biraj Bhattarai Artist Profile" class="profile-img">
         </div>
         <div class="content-text">
-          <p><strong>Biraj Bhattarai</strong> is an independent musical artist from Nepal. Like many creatives, he started his musical journey in 2020, using the global shift during the pandemic as an opportunity to focus entirely on his passion.
-​Without the backing of a major label, Biraj dedicated himself to learning the technical side of the music industry—focusing on digital distribution and consistent releases. This dedication has paid off, as he has successfully built a verified presence on global platforms like YouTube and Google, reaching listeners internationally.
-​Biraj produces music that blends personal expression with modern digital sounds. He views his growing streaming numbers not just as statistics, but as proof that independent artists can build a sustainable path purely through connection with their audience.
-​He continues to release new music and is focused on expanding his creative horizons.</p>
+          <p><strong>Biraj Bhattarai</strong> is an independent musical artist and composer from Nepal. Known for his soulful instrumental tracks, he specializes in blending acoustic clarity with melodic blues and folk influences. His journey began in 2020, where he focused on developing a unique fingerstyle guitar technique and learning the intricacies of digital music distribution.</p>
+          <p>As a verified artist on platforms like YouTube and Spotify, Biraj has built a global audience purely through independent releases. His music is often described as intimate and expansive, reflecting the landscapes and cultural heartbeat of Nepal through a contemporary lens.</p>
+        </div>
       </div>
     </section>
-  <section id="music">
-      <h2>Featured Discography</h2>
-      <div class="content-text">
-        <p>Explore my latest instrumental releases. My music focuses on acoustic clarity and emotional resonance.</p>
+
+    <section id="gallery">
+      <h2>Visual Journey</h2>
+      <p class="content-text">Snapshots from the studio and creative sessions.</p>
+      <div class="gallery-grid">
+        <img src="img1.jpg" alt="Biraj Bhattarai Studio Session">
+        <img src="img2.jpg" alt="Musical Composition">
+        <img src="img3.jpg" alt="Biraj Bhattarai Portrait">
+        <img src="img4.jpg" alt="Acoustic Performance">
+        <img src="img5.jpg" alt="Creative Process">
       </div>
+    </section>
+
+    <section id="music">
+      <h2>Featured Discography</h2>
       <div class="grid">
         <iframe src="https://www.youtube.com/embed/dDeZY6Uge74" style="width:100%; height:300px; border-radius:12px; border:none;"></iframe>
         <div class="content-text">
             <h3>Creative Process</h3>
-            <p>I record most of my compositions in a home studio environment, focusing on the organic sound of the guitar. By blending techniques like percussive fingerstyle with melodic phrasing, I aim to create music that feels both intimate and expansive.</p>
+            <p>Most compositions are recorded in a home studio environment to preserve the organic, intimate sound of the acoustic guitar. By focusing on percussive fingerstyle and melodic phrasing, each track is designed to evoke deep emotional resonance.</p>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Get In Touch</h2>
-      <p>For collaborations, or media inquiries, please reach out via my social channels or email:</p>
-      <p><strong>Email:</strong> contact@biraj-bhattarai.com.np</p>
-      <div class="social-links" style="margin-top:20px;">
-        <a href="https://facebook.com/birajbhattarae"><i class="fab fa-facebook"></i></a>
-        <a href="https://instagram.com/imbirajbhattarai"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@BirajBhattarai"><i class="fab fa-youtube"></i></a>
-        <a href="https://tiktok.com/@imbirajbhattarai"><i class="fab fa-tiktok"></i></a>
-      <a href="https://t.me/birajbhattarai"><i class="fab fa-telegram"></i></a>
+      <h2>Connect with Biraj</h2>
+      <div class="grid">
+        <div style="background: var(--bg); border-radius: 12px; padding: 10px; text-align: center; border: 1px solid var(--border);">
+          <h3 style="margin-top:0;">Facebook Feed</h3>
+          <div class="fb-page" 
+            data-href="https://facebook.com/birajbhattarae" 
+            data-tabs="timeline" 
+            data-height="450" 
+            data-small-header="false" 
+            data-adapt-container-width="true" 
+            data-hide-cover="false" 
+            data-show-facepile="true">
+            <blockquote cite="https://facebook.com/birajbhattarae" class="fb-xfbml-parse-ignore">
+              <a href="https://facebook.com/birajbhattarae">Biraj Bhattarai</a>
+            </blockquote>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="background: var(--bg); border-radius: 12px; padding: 25px; border: 1px solid var(--border); text-align: center;">
+            <i class="fab fa-instagram" style="font-size: 2.5rem; color: #e1306c; margin-bottom:10px;"></i>
+            <h3>Follow @imbirajbhattarai</h3>
+            <p>Get daily updates, musical snippets, and a look behind the scenes on Instagram.</p>
+            <a href="https://instagram.com/imbirajbhattarai" target="_blank" style="display: inline-block; padding: 12px 25px; background: var(--highlight); color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s;">View Instagram</a>
+          </div>
+
+          <div style="background: var(--card); border-radius: 12px; padding: 25px; border: 1px solid var(--border);">
+            <h3>Contact Details</h3>
+            <p><strong>Email:</strong> <a href="mailto:contact@biraj-bhattarai.com.np" style="color: var(--highlight); text-decoration: none;">contact@biraj-bhattarai.com.np</a></p>
+            <p><strong>Telegram:</strong> <a href="https://t.me/birajbhattarai" style="color: var(--highlight); text-decoration: none;">@birajbhattarai</a></p>
+            <div class="social-links" style="margin-top:20px;">
+              <a href="https://tiktok.com/@imbirajbhattarai"><i class="fab fa-tiktok"></i></a>
+              <a href="https://youtube.com/@BirajBhattarai"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
   </div>
 
   <footer>
-    <p>&copy; 2025 Biraj Bhattarai. All Rights Reserved.</p>
+    <p>&copy; 2026 Biraj Bhattarai. All Rights Reserved.</p>
     <div class="legal-links">
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="https://blog.biraj-bhattarai.com.np">Official Blog</a>
     </div>
   </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Biraj Bhattarai",
+    "alternateName": "Biraj Bhattarae",
+    "url": "https://biraj-bhattarai.com.np",
+    "image": "https://biraj-bhattarai.com.np/profile.jpg",
+    "description": "Independent Nepali musical artist and composer specializing in instrumental and acoustic music.",
+    "sameAs": [
+      "https://facebook.com/birajbhattarae",
+      "https://instagram.com/imbirajbhattarai",
+      "https://youtube.com/@BirajBhattarai",
+      "https://tiktok.com/@imbirajbhattarai",
+      "https://t.me/birajbhattarai"
+    ],
+    "genre": ["Instrumental", "Acoustic Blues", "Folk Fusion"]
+  }
+  </script>
 
 </body>
 </html>
